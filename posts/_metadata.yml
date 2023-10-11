@@ -6,3 +6,15 @@ freeze: true
 
 # Enable banner style title blocks
 title-block-banner: true
+
+# Default for table of contents
+toc: true
+toc-title: Table of contents
+toc-location: left
+
+
+author: 
+  - name: Kyle Belanger
+    url: https://kyleb.rbind.io/
+
+citation: true
