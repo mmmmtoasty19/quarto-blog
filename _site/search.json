@@ -39,7 +39,7 @@
     "href": "blog.html",
     "title": "Posts",
     "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 3, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nSep 30, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "My Start to R\n\n\nA short introduction to my blog, and R journey.\n\n\n\n\n\n\n\n\n\nJan 24, 2020\n\n\nKyle Belanger\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -47,5 +47,12 @@
     "title": "Post With Code",
     "section": "",
     "text": "This is a post with executable code."
+  },
+  {
+    "objectID": "posts/2020-01-04_my-start-to-r/my-start-to-r.html",
+    "href": "posts/2020-01-04_my-start-to-r/my-start-to-r.html",
+    "title": "My Start to R",
+    "section": "",
+    "text": "Today starts my attempt at sharing my R journey with the world! I have been learning R off and on now since late 2019, I have begun to take it much more serious as I work through my Data Analytics class at UCF. My love for all things numbers and graphs has really blossomed, and I am choosing to share that love with anyone who cares to read. I will not claim to be the best at R, or any programming for that matter, but these are my attempts. Each post in this serious will be replicated a graph created in Tableau from the book Tableau for Healthcare. Todays graph is a simple horizontal bar chart, in transferring to both a new blog site and computer I have unfortunately lost the original bar graph, but trust me the one I created looks just like it.\n\nLoad Libraries\n\nlibrary(tidyr)\nlibrary(magrittr)\nlibrary(ggplot2)\nlibrary(stringr)\nlibrary(dplyr)\n\n\n\nImport Data\n\nds &lt;- readxl::read_excel(\n    path   = \"Tableau 10 Training Practice Data.xlsx\" \n    ,sheet = \"02 - Patient Falls-Single Hosp\"\n    )\n\n\n\nClean Data Names\n\n#should make reusable forumla at later time\nnames(ds) &lt;- tolower(names(ds))\nnames(ds) &lt;- str_replace_all(names(ds),\" \", \"_\")\n\n\n\nConvert Data to ‘Long Form’\n\nds1 &lt;- ds %&gt;% \n  gather(\"patient_falls_no_injury_rate\" , \"patient_falls_with_injury_rate\"\n         ,key   = \"injury\" \n         ,value = \"rate\" ) %&gt;% \n  mutate(injury = (injury == \"patient_falls_with_injury_rate\"))\n\n\n\nGraph 5.1\n\nb1 &lt;- ds %&gt;% \n  ggplot(mapping = aes(x = reorder(type_of_care,total_patient_falls_rate ) , y = total_patient_falls_rate)) +\n  geom_col(fill = \"#2b83ba\") + \n  coord_flip() +\n  scale_y_continuous(breaks = NULL) +\n  theme(axis.ticks = element_blank()) +\n  labs(title = \"Rate of Patient Falls (per 1,000 Pateint Days)\\nby Type of Care for FY2017\"\n      ,x     = NULL\n      ,y     = NULL\n      ) +\n  theme_classic() +\n  geom_text(aes(label = format(total_patient_falls_rate, digits = 2)), nudge_y = -.25, color = \"white\")\n  \nb1\n\n\n\n\n\n\n\n\nCitationBibTeX citation:@online{belanger2020,\n  author = {Belanger, Kyle},\n  title = {My {Start} to {R}},\n  date = {2020-01-24},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nBelanger, Kyle. 2020. “My Start to R.” January 24, 2020."
   }
 ]

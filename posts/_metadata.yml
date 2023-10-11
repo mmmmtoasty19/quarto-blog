@@ -2,7 +2,8 @@
 
 # freeze computational output
 # (see https://quarto.org/docs/projects/code-execution.html#freeze)
-freeze: true
+# may need to revist later
+# freeze: true
 
 # Enable banner style title blocks
 title-block-banner: true
@@ -18,3 +19,11 @@ author:
     url: https://kyleb.rbind.io/
 
 citation: true
+
+execute: 
+  echo: true
+  message: false
+  warning: false
+
+# this will enable blog wide code folding which I do not want at this time
+# code-fold: true
