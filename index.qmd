@@ -1,14 +1,43 @@
 ---
-title: "quarto-blog"
-listing:
-  contents: posts
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
-page-layout: full
-title-block-banner: true
+title: "About"
+image: kyle.jpg
+about:
+  template: broadside
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/kyle-belanger/
+    - icon: github
+      text: Github
+      href: https://github.com/mmmmtoasty19
+
 ---
 
+## Bio
+
+I am a highly accomplished Medical Technologist with an extensive 14-year track record in the medical industry, consistently demonstrating the ability to effectively bridge the divide between medical professionals and information technologists. Proficient in the application of machine learning techniques to enhance medical data analysis and adept at developing innovative R Shiny apps to streamline healthcare processes and improve patient outcomes.
+
+## Education
+
+**Campbell University** | Buies Creek, NC
+
+Doctorate of Health Sciences | August 2020 - May 2023
+
+**University of Central Florida** | Orlando, FL
+
+M.S. in Healthcare Informatics | August 2018 - May 2020
+
+**Western Carolina University** | Cullowhee, NC
+
+B.S. in Clinical Laboratory Science | August 2005 - May 2009
+
+## Experience
+
+**Roche Diagnositcs** | IT Workflow Consultant | Oct 2021 - Present
+
+**Roche Diagnostics** | Field Application Specialist | July 2012 - Sept 2021
+
+**Cape Fear Valley Hospital** | Lead Medical Laboratory Scientist | June 2011 - July 2012
+
+**Cape Fear Valley Hospital** | Medical Laboratory Scientist | June 2009 - June 2011
 
