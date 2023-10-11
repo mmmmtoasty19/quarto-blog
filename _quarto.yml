@@ -6,6 +6,8 @@ website:
   navbar:
     right:
       - blog.qmd
+      - text: "Resume"
+        file: kyle_resume.pdf
       - icon: github
         href: https://github.com/mmmmtoasty19
 format:

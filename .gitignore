@@ -50,3 +50,5 @@ rsconnect/
 
 /.quarto/
 
+# using this folder to move old blog posts over
+old_posts/
