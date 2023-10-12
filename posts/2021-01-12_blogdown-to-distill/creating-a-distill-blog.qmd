@@ -3,6 +3,7 @@ title: "Converting From Blogdown to Distill"
 subtitle: |
   A meta post on transferring from a blogdown to distill blog site
 date: 01-12-2021
+date-modified: 10-12-2023
 categories:
   - Distill
 ---
