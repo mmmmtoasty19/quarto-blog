@@ -1,0 +1,5 @@
+Data,Structure,Source,Notes
+2010 Census Rural/Urban Housing,one row per county,US Census,
+County Health Rankings,"one row per county,  year",County Health Rankings,Raw data is one year per file
+Population Estimates,"one row per county, year, age group",US Census,
+Diabetes Data,"one row per county, year",CDC Diabetes Atlas,Raw data is one year per file

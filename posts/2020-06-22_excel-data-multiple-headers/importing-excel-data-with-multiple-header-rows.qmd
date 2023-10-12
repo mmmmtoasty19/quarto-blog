@@ -1,0 +1,99 @@
+---
+title: "Importing Excel Data with Multiple Header Rows"
+subtitle: |
+  A solution for importing Excel Data that contains two header rows.
+date: 06-22-2020
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r, echo=FALSE}
+
+knitr::read_chunk("excel_headers.R")
+```
+
+# Problem 
+
+Recently I tried to important some Microsoft Excel data into R, and ran into an issue were the data actually had two different header rows. The top row listed a group, and then the second row listed a category within that group.  Searching goggle I couldn't really find a good example of what I was looking for, so I am putting it here in hopes of helping someone else!   
+
+# Example Data
+
+I have created a small Excel file to demonstrate what I am talking about. Download it [here](https://github.com/mmmmtoasty19/kyleb/tree/master/content/post/2020-06-15-importing-excel-data-with-multiple-headers/example_data.xlsx). This is the data from Excel.
+![image of example data](example_data_img1.png)
+
+# Check Data
+
+First we will read the file in using the package readxl and view the data without doing anything special to it.
+
+```{r example-data}
+
+```
+
+# New Header Names
+
+### Step 1
+First lets read back the data, this time however with some options.  We will set the n_max equal to 2, to only read the first two rows, and set col_names to FALSE so we do not read the first row as headers.
+
+```{r fix-it-data }
+
+```
+
+### Step 2
+Now that we have our headers lets first transpose them to a vertical matrix using the base function t(), then we will turn it back into a tibble to allow us to use tidyr fill function. 
+
+```{r fix-it-names}
+
+```
+
+Note that tidyr fill can not work row wise, thus the need to flip the tibble so it is long vs wide.
+
+### Step 3
+
+Now we use tidyr fill function to fill the NA's with whatever value it finds above.  
+
+```{r fix-it-names-1}
+
+```
+
+### Step 4
+
+This is where my data differed from many of the examples I could find online.  Because the second row is also a header we can not just get rid of them.  We can solve this using paste() combined with dplyr mutate to form a new column that combines the first and second column.
+
+```{r fix-it-names-2}
+
+```
+
+### Step 4a
+
+One more small clean up task, in the example data the first column header Name, did not have a second label, this has created a name with an NA attached.  We can use stringr to remove this NA.
+
+```{r fix-it-names-3}
+
+```
+
+### Step 5
+Now that are new name column is the way we want it, we can use dpylrs pull to return a vector of just that column
+
+```{r fix-it-names-4}
+
+```
+
+# Final Data
+
+Now that we have a vector of column names lets read in the original file using our new names.  We set the skip argument to 2, to skip the first two rows, and set col_names equal to our vector of names.  Note the last step I used the janitor package to provide names in snake case (the default for the clean names function.)
+
+```{r fix-it-final}
+
+```
+
+# Other Help
+
+While searching for some solutions to my problem I found two good examples, however neither did exactly what I was trying to do.  
+
+1.  This post by Lisa Deburine is pretty close to what I was trying to accomplish and gave me a good starting point.  Read it [here](https://debruine.github.io/posts/multi-row-headers/)
+
+2.  This post by Alison Hill solves a simlar but slightly different problem. In her data the 2nd row is actually metadata not a second set of headers.  Read it [here](https://alison.rbind.io/post/2018-02-23-read-multiple-header-rows/)

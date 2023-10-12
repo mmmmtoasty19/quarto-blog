@@ -1,0 +1,123 @@
+---
+title: "Diabetes in Rural North Carolina : Data Collection and Cleaning"
+subtitle: |
+  This is the second post in the series exploring Diabetes in rural North Carolina.  This post will explore the data used for this project, from collection, cleaning, and analysis ready data.
+date: 07-25-2020
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+# Abstract 
+
+This is the second post in the series exploring Diabetes in rural North Carolina.  This post will explore the data used for this project, from collection, cleaning, and analysis ready data.
+
+# Data
+
+## Overall 
+
+Overall there are four data sources that have been used to create the analysis ready data for this project. There is one additional metadata file that contains the list of all county FIP codes, used for linking the various data sets.  All data sets use the county FIPS as the county identifier, the county name is added at the end using the metadata. The image below shows the steps taken to achieve the analysis data set, as well as a table below showing the structure of each data set.  
+
+![](data-cleaning.png)
+
+---
+
+```{r}
+library(magrittr)
+data_sources <- readr::read_csv("data-sources-descrip.csv")
+data_sources %>% knitr::kable(caption = "Data Sources") %>% kableExtra::kable_styling()
+  
+```
+
+## Rural Housing
+
+The first data set comes from the [US Census](https://data.census.gov/cedsci/table?q=rural%20house&hidePreview=true&tid=DECENNIALSF12010.H2&vintage=2010&tp=true&g=0100000US.050000), and contains the amount of housing units inside both Urban and Rural areas.  The raw data was taken and used to calculate the percentage of housing units in rural areas, as well as adding the classifications of Rural, Mostly Rural, and Mostly Urban.  More about these classifications can be read [here](https://www2.census.gov/geo/pdfs/reference/ua/Defining_Rural.pdf).  This data set is from the 2010 US Census, which is then used to set the rural classification until the next Census (2020). 
+
+View greeter script [here](https://github.com/mmmmtoasty19/nc-diabetes-epidemic-2020/blob/master/manipulation/publish/0-greeter-census-rural-housing.md)
+
+```{r}
+ds_rural_housing <- readr::read_csv(
+  "https://raw.githubusercontent.com/mmmmtoasty19/nc-diabetes-epidemic-2020/master/data-public/derived/percentage-rural.csv")
+
+head(ds_rural_housing) %>% janitor::clean_names(case = "title") %>% 
+  knitr::kable(align = 'c', caption = "Rural Housing Data Set") %>% 
+  kableExtra::kable_styling(full_width = TRUE) %>% 
+  kableExtra::footnote(general = "Displaying 6 of 3,143 rows")
+```
+
+## County Health Rankings
+
+The second data set comes from [County Health Rankings](https://www.countyhealthrankings.org/) and contains data for the risk factors associated with diabetes, this data set is complied from many different data sources. The data was downloaded by year, and then combine to form one data set. County Health Rankings uses this data to rate health outcomes across all counties of the United States, for this analysis four categories have been extracted from the overall data set. Note that the food environment index is itself a combine measure, it is a score of both access to healthy food based on distance to grocery stores, as well as access based on cost.  
+
+View greeter script [here](https://github.com/mmmmtoasty19/nc-diabetes-epidemic-2020/blob/master/manipulation/publish/0-greeter-county-rankings-national.md)
+
+```{r}
+county_risk_sources <- readr::read_csv("county_health_rankings_sources.csv")
+county_risk_sources %>% knitr::kable(caption = "County Health Rankings Sources") %>% kableExtra::kable_styling() %>% 
+  kableExtra::footnote(general = "https://www.countyhealthrankings.org/explore-health-rankings/measures-data-sources/2020-measures" , general_title = "Source: ")
+
+```
+
+---
+
+```{r}
+ds_county_risk <- readr::read_csv(
+  "https://raw.githubusercontent.com/mmmmtoasty19/nc-diabetes-epidemic-2020/master/data-public/derived/national-diabetes-risk-factors-2010-2020.csv"
+  ) 
+
+head(ds_county_risk) %>% janitor::clean_names(case = "title") %>% 
+  knitr::kable(align = 'c', caption = "County Risk Factors Data Set") %>% 
+  kableExtra::kable_styling() %>% 
+  kableExtra::footnote(general = "Displaying 6 of 34,555 rows")
+```
+
+## Population Estimates
+
+The third data set also comes from the [US Census](https://www.census.gov/data/tables/time-series/demo/popest/2010s-counties-detail.html) and contains population estimates for each county in the United States broken down by: year, age-group, sex, race, and ethnicity. For each row in the table the percent of each type of population was calculated using the yearly population total for the county. This breakdown is useful for this project as African-Americans and Hispanics suffer from diabetes at a higher rate then other groups.  
+
+View greeter script [here](https://github.com/mmmmtoasty19/nc-diabetes-epidemic-2020/blob/master/manipulation/publish/0-greeter-us-county-population-estimates.md)
+
+
+```{r}
+ds_population <- readr::read_csv(
+  "https://raw.githubusercontent.com/mmmmtoasty19/nc-diabetes-epidemic-2020/master/data-public/derived/us-county-population-estimates-v2.csv"
+  )
+
+head(ds_population) %>% janitor::clean_names(case = "title") %>% 
+  # dplyr::select(1:6) %>% 
+  knitr::kable(caption = "US Population Estimates Data Set") %>% 
+  kableExtra::kable_styling() %>% 
+  kableExtra::scroll_box(width = "100%") %>% 
+  kableExtra::footnote(general = "Displaying 6 of 565560 rows")
+
+```
+
+## Diabetes Percentages
+
+The final data set comes from the [CDC Diabetes Atlas](https://www.cdc.gov/diabetes/data/index.html) and contains the estimated prevalence of diabetes in each county of the United States, by year. The data set also includes the upper and lower estimated limits, see the [previous post](https://kyleb.rbind.io/post/2020-06-25-diabetes-1/) for an explanation of how these numbers are calculated.  The data was downloaded by year, and then merged into one data set for the project. 
+
+View greeter script [here](https://github.com/mmmmtoasty19/nc-diabetes-epidemic-2020/blob/master/manipulation/publish/0-greeter-us-diabetes.md)
+
+```{r}
+ds_diabetes <- readr::read_csv(
+  "https://raw.githubusercontent.com/mmmmtoasty19/nc-diabetes-epidemic-2020/master/data-public/derived/us-diabetes-data.csv"
+  )
+
+head(ds_diabetes) %>% janitor::clean_names(case = "title") %>% 
+  knitr::kable(caption = "US Diabetes Data") %>% 
+  kableExtra::kable_styling()
+
+```
+
+---
+
+# Analyis Data
+
+After all data has been made ready the data is joined into a final analysis ready data set.  Each row of this data set represents, one county, one year, and one age group. The data is also filtered to remove Alaska and Hawaii as these states could affect trends seen in the continental United States.
+
+View the scribe script [here](https://github.com/mmmmtoasty19/nc-diabetes-epidemic-2020/blob/master/manipulation/publish/1-scribe-diabetes-data-set.md)
+
+![](data-join.png)

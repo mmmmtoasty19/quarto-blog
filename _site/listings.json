@@ -2,6 +2,8 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/2020-07-25_diabetes-data-collection-and-cleaning/diabetes-in-rural-north-carolina-data-collection-and-cleaning.html",
+      "/posts/2020-06-22_excel-data-multiple-headers/importing-excel-data-with-multiple-header-rows.html",
       "/posts/2020-02-13_basic-who-TB-data/basic-exploration-of-who-tuberculosis-data.html",
       "/posts/2020-02-10_line-graphs-and-interactivity/line-graphs-and-interactivity.html",
       "/posts/2020-01-29_facets-and-humility/facets-and-a-lesson-in-humility.html",
