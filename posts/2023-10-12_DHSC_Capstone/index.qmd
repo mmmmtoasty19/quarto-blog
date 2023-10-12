@@ -1,0 +1,21 @@
+---
+title: "Reflex Testing using Machine Learning in the Clinical Laboratory"
+subtitle: |
+  This post contains the abstract of my Capstone for the Doctorate of Health Science program at
+  Campbell University. 
+date: 2023-10-12
+---
+
+# Full Paper
+
+To view the full paper please go to the following [link](https://kyle-belanger.quarto.pub/reflex-testing-using-machine-learning-in-the-clinical-laboratory/)
+
+# Abstract
+
+**Introduction**: This research study focuses on developing and testing a machine learning algorithm to predict the FT4 result or diagnose hyper or hypothyroidism in clinical chemistry. The goal is to bridge the gap between hard-coded reflex testing and fully manual reflective testing using machine learning algorithms. The significance of this study lies in the increasing healthcare costs, where laboratory services contribute significantly to medical decisions and budgets. By implementing automated reflex testing with machine learning algorithms, unnecessary laboratory tests can be reduced, resulting in cost savings and improved efficiency in the healthcare system.
+
+**Methods:** The study was performed using the Medical Information Mart for Intensive Care (MIMIC) database for data collection. The database consists of de-identified health-related data from critical care units. Eighteen variables, including patient demographics and lab values, were selected for the study. The data set was filtered based on specific criteria, and an outcome variable was created to determine if the Free T4 value was diagnostic. The data handling and modeling were performed using R and R Studio. Regression and classification models were screened using a random grid search to tune hyperparameters, and random forest models were selected as the final models based on their performance. The selected hyperparameters for both regression and classification models are specified.
+
+**Results:** The study analyzed a dataset of 11,340 observations, randomly splitting it into a training set (9071 observations) and a testing set (2269 observations) based on the Free T4 laboratory diagnostic value stratification. Classification algorithms were used to predict whether Free T4 would be diagnostic, achieving an accuracy of 0.796 and an AUC of 0.918. The model had a sensitivity of 0.632 and a specificity of 0.892. The importance of individual analytes was assessed, with TSH being the most influential variable. The study also evaluated the predictability of Free T4 results using regression, achieving a Root Mean Square Error (RMSE) of 0.334. The predicted results had an accuracy of 0.790, similar to the classification model.
+
+**Discussion:** The study found that the diagnostic value of Free T4 can be accurately predicted 80% of the time using machine learning algorithms. However, the model had limitations in terms of sensitivity, with a false negative rate of 16% for elevated TSH results and 20% for decreased TSH results. The model achieved a specificity of 89% but did not meet the threshold for clinical deployment. The importance of individual analytes was explored, revealing unexpected correlations between TSH and hematology results, which could be valuable for future algorithms. Real-world applications could use predictive models in clinical decision-making systems to determine the need for Free T4 lab tests based on predictions and patient signs and symptoms. However, implementing such algorithms in existing laboratory information systems poses challenges.
