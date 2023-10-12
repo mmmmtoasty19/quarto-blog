@@ -2,7 +2,8 @@ project:
   type: website
   render: 
     - "*.qmd"
-    - "!old_posts/"
+    - "*.rmd"
+    - "!old_posts/" #using for the time being to store old blog post while converting
 
 website:
   title: "Kyle Belanger"
