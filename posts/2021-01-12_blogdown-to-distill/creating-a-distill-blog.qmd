@@ -1,0 +1,63 @@
+---
+title: "Converting From Blogdown to Distill"
+subtitle: |
+  A meta post on transferring from a blogdown to distill blog site
+date: 01-12-2021
+categories:
+  - Distill
+---
+
+# Authors Note
+
+I have since converted this blog to a quarto blog, but am leaving this post up in case anyone finds it useful
+
+# Introduction
+
+This metapost describes changing my personal blog from a blogdown site to a distill blog site.  I will not be going over starting a site from scratch as there are already several great resources for doing this.  What I will be going over is some of the challenges and some of the changes and tips I have found.  If you are looking to start a site from scratch, check out these great resources:
+
+- The Distill for Rmarkdown page on creating a [blog](https://rstudio.github.io/distill/blog.html)
+- This excellent post from Shamindra Shrotriya on setting up a [blog](https://www.shamindras.com/posts/2019-07-11-shrotriya2019distillpt1/)
+- This post from the Mockup [blog](https://themockup.blog/posts/2020-08-01-building-a-blog-with-distill/)
+
+This last post goes into some of the pros and cons of using distill instead of blogdown.  If you want simplicity, go with distill without much customization.  If you want the ability for a lot of customization and don't mind being frustrated with Hugo, go with blogdown.
+
+# Challenges
+
+The good thing about switching from blogdown to distill was I had very few challenges!  The distill documentation, combined with the two posts I listed, helped me with most of my troubles.  The only issue I ran into was distill contains a function called `import_post()`, which according to the docs, only needs a published URL to work.  I could never solve why, but I could not pull in the posts from my old blogdown site.  This wasn't a big deal as I had the original rmarkdown documents, but this could pose an issue if you didn't.  
+
+# Going Outside the Box
+
+## Code Folding
+
+When I converted my blog on 12/30/2020, code folding was not included as an option by default in distill.  At that time, an excellent package called [Codefolder](https://github.com/ijlyttle/codefolder) added the functionality. Since going live with the blog, code folding has been added to distill.^[Note that as of publishing, code folding is only available in the development version of distill] Code folding is available for either the whole document or individual code sections. The default caption is "Show Code", but instead of typing `code_folding=TRUE`, you can provide a string to change the caption. 
+
+```{r, code_folding="Lets See It",echo=TRUE}
+# Some awesome code 
+# That does awesome things
+```
+
+## Customizing the Home Page
+
+By default, a distill blog's home page will be the blog index page. I chose to edit my home page to be a landing page for myself and then have the blog index as a separate page.  When creating a new blog, this is the default YAML header for your index page.
+
+```{.yaml}
+---
+title: "New Site"
+site: distill::distill_website
+listing: posts
+---
+```
+
+The critical piece here is the line `site: distill::distill_website`. This line is what is needed to render the website.  For my home page, I decided to use the package [Postcard](https://github.com/seankross/postcards), which is used to generate simple landing pages. I won't go into every step as there is already a great post by [Alison Hill](https://alison.rbind.io/post/2020-12-22-postcards-distill/) on how to do that.  However, I will point out the most crucial part of the new index page the YAML header needs to contain these two lines.
+
+```{.yaml}
+output:
+  postcards::trestles
+site: distill::distill_website
+```
+
+# Final Thoughts
+
+I have enjoyed the simplicity of Distill. While not nearly as customizable as blogdown, getting a blog site up and running in under an hour is pretty lovely. I hope to keep exploring what Distill has to offer and keep posting my updates!  
+
+
