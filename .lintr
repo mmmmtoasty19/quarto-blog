@@ -1,0 +1,9 @@
+linters: linters_with_defaults(
+    line_length_linter(120) 
+    , commented_code_linter = NULL
+    , object_usage_linter = NULL
+    , indentation_linter(
+        hanging_indent_style = "never"
+    )
+    ) # see vignette("lintr")
+encoding: "UTF-8"

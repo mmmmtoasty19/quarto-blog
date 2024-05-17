@@ -1,0 +1,57 @@
+---
+title: "Does a US Born Players Birthdate affect their shot at the NHL"
+description: "Inspired by TidyTuesday Week 2 - 2024 dataset about Candian Players, lets look at the same anaylyis for American Born Players"
+date: "5/15/2024"  #Update when live
+categories:
+  - tidytuesday
+  - R
+  - dataViz
+draft: TRUE
+---
+
+```{r}
+#| include: false
+
+knitr::read_chunk(here::here("posts", "2024-05-15-US-NHL-Birthrate", "nhl_usa_births.R"))
+
+```
+
+```{r }
+#| label: Setup
+#| echo: FALSE
+#| warning: false
+#| message: false
+```
+This post is inspired by this fantastic [blog post](https://jlaw.netlify.app/2023/12/04/are-birth-dates-still-destiny-for-canadian-nhl-players/) on Jlaws Blog.  In it they explore how in the first chapter Malcolm Gladwell’s Outliers he discusses how in Canadian Junior Hockey there is a higher likelihood for players to be born in the first quarter of the year. As it appears cutoff dates for USA hockey are different and they are currently using June 1st (if my internet searches are to be believed), I wondered if the same analysis would hold true for American Born Players.
+
+## Distribution of Births by Month in the United States
+
+The data for US Birth Rates can be pulled from [CDC Wonder](https://wonder.cdc.gov/). The particular table of interest is the Natality, 2007 - 2022.  CDC Wonder has a quite interesting API that requires a request with quite a few XML parameters.  Thankfully you can build the request on the website and a nice package already exists to send the query.  Check out the [Wonderapi Page](https://socdatar.github.io/wonderapi/index.html) for more info.  
+
+```{r}
+#| label: USA_Birth_Data
+```
+
+### Graph Distribution of Births Compared to Expected
+
+note use of month.name to sort 
+
+```{r}
+#| label: USA_Distro
+```
+
+## Hockey Data
+
+```{r}
+#| label: Roster_Data
+```
+
+
+## Graph It 
+
+
+```{r}
+#| label: Graph_It
+#| fig-height: 7
+#| fig-width: 7
+```
