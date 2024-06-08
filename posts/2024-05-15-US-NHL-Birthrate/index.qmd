@@ -1,17 +1,15 @@
 ---
 title: "Does a US Born Players Birthdate affect their shot at the NHL"
 description: "Inspired by TidyTuesday Week 2 - 2024 dataset about Candian Players, lets look at the same anaylyis for American Born Players"
-date: "5/15/2024"  #Update when live
+date: "6/08/2024"  #Update when live
 categories:
   - tidytuesday
   - R
   - dataViz
-draft: TRUE
 ---
 
 ```{r}
 #| include: false
-
 knitr::read_chunk(here::here("posts", "2024-05-15-US-NHL-Birthrate", "nhl_usa_births.R"))
 
 ```
@@ -22,6 +20,7 @@ knitr::read_chunk(here::here("posts", "2024-05-15-US-NHL-Birthrate", "nhl_usa_bi
 #| warning: false
 #| message: false
 ```
+
 This post is inspired by this fantastic [blog post](https://jlaw.netlify.app/2023/12/04/are-birth-dates-still-destiny-for-canadian-nhl-players/) on Jlaws Blog.  In it they explore how in the first chapter Malcolm Gladwell’s Outliers he discusses how in Canadian Junior Hockey there is a higher likelihood for players to be born in the first quarter of the year. As it appears cutoff dates for USA hockey are different and they are currently using June 1st (if my internet searches are to be believed), I wondered if the same analysis would hold true for American Born Players.
 
 ## Distribution of Births by Month in the United States
@@ -30,28 +29,58 @@ The data for US Birth Rates can be pulled from [CDC Wonder](https://wonder.cdc.g
 
 ```{r}
 #| label: USA_Birth_Data
+
 ```
 
-### Graph Distribution of Births Compared to Expected
+### Distribution of Births Compared to Expected
 
-note use of month.name to sort 
+The data from CDC Wonder pulls in quite nice, the only addition is adding a column for expected Births.  This column gives each day of each month an equal chance for a person being born.  Based on the data the summer months (June through August), and September have a slightly higher actual birth vs expected. Based on cut off Dates many of these kids would be the oldest in their age groups. 
 
 ```{r}
 #| label: USA_Distro
+
 ```
 
 ## Hockey Data
 
+While I wish I could sit and type out how I sat and figured out the complexity of the NHL Stats API and how to bring it into R.  In reality I took a great guide, that being Jlaws post, and tweaked what I needed.  Instead of Canadian players, I pulled out just the US Born players and their birth dates. I did also pull out positions to see if that will make any sort of difference.  What pulls out of the NHL API has a ton of great details and I look forward to diving into what is available to see what kind of graphics can be built.  
+
 ```{r}
 #| label: Roster_Data
+
 ```
 
 
 ## Graph It 
 
+Lets now take a look at the graph.  Using the ggimage package we can place nice logos for both the United States and NHL on the graph.  This stands out quite nicely versus just using a colored point.  Interesting enough the graph seems to show being born early on in the year may mean making the NHL is more likely.  
 
 ```{r}
 #| label: Graph_It
-#| fig-height: 7
-#| fig-width: 7
+#| fig-height: 8
+#| fig-width: 10
+
+```
+
+If we look at this from a more stats based perspective, running a chi square test on the amount of players in the NHL per month, based on the US expected birth rate, we do see however there is quite a high p value.  This is lets us know we can not reject the Null hypothesis that these are the same thing. 
+
+```{r}
+#| label: Stats
+```
+
+# A Little Fun
+
+For just a little bit of fun I pulled birth data for the entire world using the UN's website.  I then filtered this out to just countries that currently have players in the NHL.  The graph shows more of the same, looks to lean heavily to the beginning of the year, and this time the stat back it up.  So being born early in the year may in fact help your chances of making it to the NHL  
+
+```{r}
+#| label: All_Players
+#| include: false
+```
+
+
+```{r}
+#| label: world_graph
+#| fig-height: 8
+#| fig-width: 10
+
 ```

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -24,7 +24,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -60,6 +60,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -100,7 +101,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -109,6 +116,7 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -122,10 +130,10 @@ div.csl-indent {
 <body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Kyle Belanger</span>
     </a>
@@ -137,22 +145,22 @@ div.csl-indent {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html" rel="" target="">
- <span class="menu-text">Posts</span></a>
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../kyle_resume.pdf" rel="" target="">
- <span class="menu-text">Resume</span></a>
+    <a class="nav-link" href="../../kyle_resume.pdf"> 
+<span class="menu-text">Resume</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/mmmmtoasty19" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/mmmmtoasty19"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -188,7 +196,7 @@ div.csl-indent {
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
@@ -213,12 +221,13 @@ div.csl-indent {
   </ul>
 </nav>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
+
 
 
 
@@ -261,7 +270,7 @@ div.csl-indent {
 <p><strong><em>This section contains technical information for deeper analysis and reproduction. Casual readers are invited to skip it.</em></strong></p>
 <p>Packages used in this report.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Attach these packages so their functions don't need to be qualified: http://r-pkgs.had.co.nz/namespace.html#search-path</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr) <span class="co"># enables piping : %&gt;%</span></span>
@@ -276,7 +285,7 @@ div.csl-indent {
 </div>
 <p>Definitions of global object (file paths, factor levels, object groups ) used throughout the report.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#set ggplot theme</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(<span class="fu">theme_bw</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -293,7 +302,7 @@ div.csl-indent {
 </ol>
 <!-- Load the datasets.   -->
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load the data, and have all column names in lowercase</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -315,7 +324,7 @@ div.csl-indent {
 </div>
 <!-- load map data -->
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load in both US State Map and NC County Map</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -339,7 +348,7 @@ div.csl-indent {
 <h3 class="anchored" data-anchor-id="tweaks">Tweaks</h3>
 <!-- Tweak the datasets.   -->
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>county_centers <span class="ot">&lt;-</span> county_centers_raw <span class="sc">%&gt;%</span> </span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_all</span>(<span class="sc">~</span>stringr<span class="sc">::</span><span class="fu">str_replace_all</span>(.,</span>
@@ -378,7 +387,7 @@ div.csl-indent {
 <h3 class="anchored" data-anchor-id="merge">Merge</h3>
 <!-- Merge datasets -->
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#join US totals to NC data </span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -408,7 +417,7 @@ div.csl-indent {
 <section id="overall---national-level" class="level1">
 <h1>Overall - National Level</h1>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>us_diabetes_data <span class="ot">&lt;-</span> us_diabetes_data <span class="sc">%&gt;%</span> </span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -439,7 +448,11 @@ div.csl-indent {
 <span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>o_g1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="diabetes-in-rural-north-carolina-exploring-prevalence-trends_files/figure-html/o-g1-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="diabetes-in-rural-north-carolina-exploring-prevalence-trends_files/figure-html/o-g1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Overall, the national average for diagnosed diabetes sharply rose through the early 2000’s, leveling off around 2010. These numbers however, are estimates based on the self-reported response to the CDC’s National Health Interview Survey, and do not represent the actual confirmed diagnoses. The CDC estimates that 1 in 5 adults have undiagnosed diabetes, therefore the numbers reported by the NHIS are likely to underestimate the true prevalence <span class="citation" data-cites="CDCP2020">(<a href="#ref-CDCP2020" role="doc-biblioref">Centers for Disease Control and Prevention, 2020</a>)</span>.</p>
@@ -448,7 +461,7 @@ div.csl-indent {
 <h1>Overall - State Level</h1>
 <p>State and County level data on diabetes prevalence are taken from the CDC’s Behavioral Risk Factor Surveillance System <a href="https://www.cdc.gov/brfss/index.html">(BRFSS)</a>. These results are based on the question “Has a doctor, nurse, or other health professional ever told you that you have diabetes?”. Women who only experienced diabetes during pregnancy were excluded from the counts. The BRFSS is an ongoing, monthly telephone survey of the non-institutionalized adults (aged 18 years or older) in each state. The year 2011 saw a major change to the methodology of the survey, which started to include homes without a landline phone. This change was expected to increase coverage of lower income, lower educational levels, and younger age groups, because these groups often exclusively rely on cellular telephones for personal communication.<span class="citation" data-cites="Pierannunzi2012">(<a href="#ref-Pierannunzi2012" role="doc-biblioref">Pierannunzi et al., 2012</a>)</span></p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>s_g1 <span class="ot">&lt;-</span> state_map <span class="sc">%&gt;%</span> </span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_drop_geometry</span>() <span class="sc">%&gt;%</span> </span>
@@ -474,12 +487,16 @@ div.csl-indent {
 <span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>s_g1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="diabetes-in-rural-north-carolina-exploring-prevalence-trends_files/figure-html/s-g1-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="diabetes-in-rural-north-carolina-exploring-prevalence-trends_files/figure-html/s-g1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>The above graph shows diabetes prevalence trends by state, grouped into regions based on the US Census classification <a href="https://www2.census.gov/geo/pdfs/maps-data/maps/reference/us_regdiv.pdf">regions</a>. While all regions of the United states show positive growth in diabetes prevalence, the south exhibits a slightly higher growth rate, as well as the highest prevalence.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>s_g2 <span class="ot">&lt;-</span> state_map <span class="sc">%&gt;%</span> </span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_drop_geometry</span>() <span class="sc">%&gt;%</span> </span>
@@ -501,7 +518,11 @@ div.csl-indent {
 <span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>s_g2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="diabetes-in-rural-north-carolina-exploring-prevalence-trends_files/figure-html/s-g2-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="diabetes-in-rural-north-carolina-exploring-prevalence-trends_files/figure-html/s-g2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>When focusing on the south region, North Carolina falls close to the middle of diabetes prevalence.</p>
@@ -510,7 +531,7 @@ div.csl-indent {
 <h1>Overall - North Carolina</h1>
 <p>When examining the trajectory for North Carolina, we can see that it has been consistently higher than national average . We see that in 2016 there was a large spike in diagnosed cases; unfortunately this is the last available year so it is unclear whether the upward trend continues. The graph below compares state-level average to the national average. Notice that the trend line is slightly higher than in the previous graphs: this is due to the age cut offs used for National and State level data vs County Level data. Previous data used 18 years of age as a cutoff for classifying adults, whereas the county level data uses 20. Due to removing 18- and 19-year-olds from the population, who typically have less diagnosed cases of diabetes than those of older ages, the computed prevalence increases slightly.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>d1 <span class="ot">&lt;-</span> nc_diabetes_data <span class="sc">%&gt;%</span> </span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span> </span>
@@ -546,12 +567,16 @@ div.csl-indent {
 <span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>nc_g1 </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="diabetes-in-rural-north-carolina-exploring-prevalence-trends_files/figure-html/nc-g1-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="diabetes-in-rural-north-carolina-exploring-prevalence-trends_files/figure-html/nc-g1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>We see a spike in 2016, the last year for which the data are available. However, we should be careful with our interpretation of this pattern, because the examination of the county-level trajectories reveals an aberration in the trend that requires a more rigorous investigation.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>nc_g1a <span class="ot">&lt;-</span> nc_diabetes_data <span class="sc">%&gt;%</span> </span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> percentage)) <span class="sc">+</span></span>
@@ -565,12 +590,16 @@ div.csl-indent {
 <span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>nc_g1a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="diabetes-in-rural-north-carolina-exploring-prevalence-trends_files/figure-html/nc-data-aberration-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="diabetes-in-rural-north-carolina-exploring-prevalence-trends_files/figure-html/nc-data-aberration-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>While all of North Carolina has a higher prevalence than the national average, rural counties have systematically higher prevalence of diabetes than urban counties. Note that after 2011 both Urban and Rural counties break the upward trend exhibited in the previous 5 years. This could be explained by the addition of cell phones to the BRFS Survey as many rural areas are often lower income areas and may only rely on a cell phone for communication. As mentioned previously there is an odd spike in case in 2016 that can’t be explained by current documentation. For the purpose of this evaluation 2016 will be excluded from the county level data since the odd trend can not be explained and no further data is available to determine if this is a real spike or could be attributed to methodology change or data quality.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>d2 <span class="ot">&lt;-</span> nc_diabetes_data <span class="sc">%&gt;%</span> </span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>us_pct) <span class="sc">%&gt;%</span> </span>
@@ -613,7 +642,11 @@ div.csl-indent {
 <span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>nc_g2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="diabetes-in-rural-north-carolina-exploring-prevalence-trends_files/figure-html/nc-g2-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="diabetes-in-rural-north-carolina-exploring-prevalence-trends_files/figure-html/nc-g2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -621,7 +654,7 @@ div.csl-indent {
 <h1>By County - Geographical</h1>
 <p>County level data first became available in 2004, three years of data is used to arrive at these estimates. For example, the 2006 estimates were computed using the data from 2005, 2006, and 2007 BRFS survey rounds. The county-level estimates were based on indirect model-dependent estimates using Bayesian multilevel modeling techniques<span class="citation" data-cites="Rao2003 Barker2013">(<a href="#ref-Rao2003" role="doc-biblioref">JNK, 2003</a> ; <a href="#ref-Barker2013" role="doc-biblioref">Barker et al., 2013</a>)</span>. This model-dependent approach employs a statistical model that “borrows strength” in making an estimate for one county from BRFSS data collected in other counties and states. Multilevel Binomial regression models with random effects of demographic variables (age 20-44, 45-64, &gt;=65; race/ethnicity; sex) at the county-level were developed. Estimates were adjusted for age to the 2000 US standard population using age groups of 20-44, 45-64, and 65 or older<span class="citation" data-cites="Klein2001">(<a href="#ref-Klein2001" role="doc-biblioref">Klein &amp; Schoenborn, 2001</a>)</span>.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>g50 <span class="ot">&lt;-</span> nc_diabetes_data <span class="sc">%&gt;%</span> </span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">&lt;</span> <span class="dv">2015</span>) <span class="sc">%&gt;%</span> </span>
@@ -645,13 +678,17 @@ div.csl-indent {
 <span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>g50</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="diabetes-in-rural-north-carolina-exploring-prevalence-trends_files/figure-html/spaghetti-plot-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="diabetes-in-rural-north-carolina-exploring-prevalence-trends_files/figure-html/spaghetti-plot-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>When viewing all county trend lines together, we see that the loess line for both urban and rural follows a similar trend for the time period.</p>
 <p>The following graphs displays the total estimated prevalence of Diabetes in each off the 100 North Carolina counties. To keep the scaling consistent between the graphs, we binned the estimates into 6 intervals of the same size. Rural counties are highlighted with a stronger border line as well as a letter “R” in respective geographic centers. These graphs allow us to view geographical clusters of diabetes prevalence.</p>
 <div class="cell page-columns page-full">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>nc_counties_map_binned <span class="ot">&lt;-</span> nc_counties_map <span class="sc">%&gt;%</span> </span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">&lt;</span> <span class="dv">2015</span>) <span class="sc">%&gt;%</span> </span>
@@ -707,13 +744,17 @@ div.csl-indent {
 <span id="cb14-52"><a href="#cb14-52" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-53"><a href="#cb14-53" aria-hidden="true" tabindex="-1"></a>c_g1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output-display column-body-outset">
-<p><img src="diabetes-in-rural-north-carolina-exploring-prevalence-trends_files/figure-html/c-g1-1.png" class="img-fluid" width="672"></p>
+<div class="cell-output-display page-columns page-full">
+<div class="page-columns page-full">
+<figure class="figure page-columns page-full">
+<p class="page-columns page-full"><img src="diabetes-in-rural-north-carolina-exploring-prevalence-trends_files/figure-html/c-g1-1.png" class="img-fluid figure-img column-body-outset" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>The following box plot displays the distribution of estimated cases by county from 2006 to 2014. For all years of current data the mean of rural counties is higher then that of their Urban counterparts.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>c_g1c <span class="ot">&lt;-</span> nc_counties_map <span class="sc">%&gt;%</span> </span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -736,7 +777,11 @@ div.csl-indent {
 <span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>c_g1c</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="diabetes-in-rural-north-carolina-exploring-prevalence-trends_files/figure-html/county-boxplot-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="diabetes-in-rural-north-carolina-exploring-prevalence-trends_files/figure-html/county-boxplot-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -744,7 +789,7 @@ div.csl-indent {
 <h1>By County - Percent Change</h1>
 <p>The following graphs display the overall change in estimated prevalence between 2006 to 2014.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>d3 <span class="ot">&lt;-</span> nc_counties_map <span class="sc">%&gt;%</span> </span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_drop_geometry</span>() <span class="sc">%&gt;%</span> </span>
@@ -802,12 +847,16 @@ div.csl-indent {
 <span id="cb16-54"><a href="#cb16-54" aria-hidden="true" tabindex="-1"></a>c_g4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="diabetes-in-rural-north-carolina-exploring-prevalence-trends_files/figure-html/c-g4-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="diabetes-in-rural-north-carolina-exploring-prevalence-trends_files/figure-html/c-g4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>The following chart displays the density curve of the percentage change for both rural and urban counties. It is notable that the mean of change for Urban counties is actually higher than the mean for rural counties. However, we also see that most change for both regions is positive growth. In fact only 16 rural, and 10 Urban counties experienced negative change in the given time frame. While 35 rural and 34 urban counties experience growth in the same period.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>d4 <span class="ot">&lt;-</span> d3 <span class="sc">%&gt;%</span> </span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_drop_geometry</span>() <span class="sc">%&gt;%</span> </span>
@@ -847,7 +896,11 @@ div.csl-indent {
 <span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a>g51</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="diabetes-in-rural-north-carolina-exploring-prevalence-trends_files/figure-html/pct_p-histogram-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="diabetes-in-rural-north-carolina-exploring-prevalence-trends_files/figure-html/pct_p-histogram-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -864,7 +917,7 @@ div.csl-indent {
 Environment <span class="glyphicon glyphicon-plus-sign"></span>
 </summary>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>( <span class="fu">requireNamespace</span>(<span class="st">"devtools"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>) ) {</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  devtools<span class="sc">::</span><span class="fu">session_info</span>()</span>
@@ -875,152 +928,139 @@ Environment <span class="glyphicon glyphicon-plus-sign"></span>
 <div class="cell-output cell-output-stdout">
 <pre><code>─ Session info ───────────────────────────────────────────────────────────────
  setting  value
- version  R version 4.2.1 (2022-06-23 ucrt)
- os       Windows 10 x64 (build 22621)
+ version  R version 4.3.3 (2024-02-29 ucrt)
+ os       Windows 11 x64 (build 22621)
  system   x86_64, mingw32
  ui       RTerm
  language (EN)
  collate  English_United States.utf8
  ctype    English_United States.utf8
  tz       America/New_York
- date     2023-10-12
- pandoc   3.1.8 @ C:/PROGRA~1/Pandoc/ (via rmarkdown)
+ date     2024-06-08
+ pandoc   3.2 @ C:/Users/belangew/AppData/Local/Pandoc/ (via rmarkdown)
 
 ─ Packages ───────────────────────────────────────────────────────────────────
- package           * version date (UTC) lib source
- bit                 4.0.4   2020-08-04 [1] CRAN (R 4.2.2)
- bit64               4.0.5   2020-08-30 [1] CRAN (R 4.2.2)
- cachem              1.0.6   2021-08-19 [1] CRAN (R 4.2.2)
- callr               3.7.3   2022-11-02 [1] CRAN (R 4.2.2)
- class               7.3-20  2022-01-16 [2] CRAN (R 4.2.1)
- classInt            0.4-10  2023-09-05 [1] CRAN (R 4.2.3)
- cli                 3.4.1   2022-09-23 [1] CRAN (R 4.2.2)
- colorspace          2.0-3   2022-02-21 [1] CRAN (R 4.2.2)
- confintr            1.0.2   2023-06-04 [1] CRAN (R 4.2.3)
- crayon              1.5.2   2022-09-29 [1] CRAN (R 4.2.2)
- crul                1.4.0   2023-05-17 [1] CRAN (R 4.2.3)
- curl                4.3.3   2022-10-06 [1] CRAN (R 4.2.2)
- DBI                 1.1.3   2022-06-18 [1] CRAN (R 4.2.2)
- devtools            2.4.5   2022-10-11 [1] CRAN (R 4.2.2)
- digest              0.6.30  2022-10-18 [1] CRAN (R 4.2.2)
- dlookr              0.6.2   2023-07-01 [1] CRAN (R 4.2.3)
- dplyr             * 1.1.3   2023-09-03 [1] CRAN (R 4.2.3)
- e1071               1.7-13  2023-02-01 [1] CRAN (R 4.2.3)
- ellipsis            0.3.2   2021-04-29 [1] CRAN (R 4.2.2)
- evaluate            0.21    2023-05-05 [1] CRAN (R 4.2.3)
- extrafont           0.19    2023-01-18 [1] CRAN (R 4.2.2)
- extrafontdb         1.0     2012-06-11 [1] CRAN (R 4.2.0)
- fansi               1.0.3   2022-03-24 [1] CRAN (R 4.2.2)
- farver              2.1.1   2022-07-06 [1] CRAN (R 4.2.2)
- fastmap             1.1.0   2021-01-25 [1] CRAN (R 4.2.2)
- fontBitstreamVera   0.1.1   2017-02-01 [1] CRAN (R 4.2.0)
- fontLiberation      0.1.0   2016-10-15 [1] CRAN (R 4.2.0)
- fontquiver          0.2.1   2017-02-01 [1] CRAN (R 4.2.3)
- forcats             1.0.0   2023-01-29 [1] CRAN (R 4.2.3)
- Formula             1.2-5   2023-02-24 [1] CRAN (R 4.2.2)
- fs                  1.5.2   2021-12-08 [1] CRAN (R 4.2.2)
- gdtools             0.3.3   2023-03-27 [1] CRAN (R 4.2.3)
- generics            0.1.3   2022-07-05 [1] CRAN (R 4.2.2)
- gfonts              0.2.0   2023-01-08 [1] CRAN (R 4.2.3)
- gghighlight         0.4.0   2022-10-16 [1] CRAN (R 4.2.3)
- ggplot2           * 3.4.2   2023-04-03 [1] CRAN (R 4.2.3)
- ggpmisc             0.5.4-1 2023-08-13 [1] CRAN (R 4.2.3)
- ggpp                0.5.4   2023-08-12 [1] CRAN (R 4.2.3)
- ggrepel             0.9.3   2023-02-03 [1] CRAN (R 4.2.3)
- glue                1.6.2   2022-02-24 [1] CRAN (R 4.2.2)
- gridExtra           2.3     2017-09-09 [1] CRAN (R 4.2.2)
- gtable              0.3.3   2023-03-21 [1] CRAN (R 4.2.3)
- hms                 1.1.3   2023-03-21 [1] CRAN (R 4.2.3)
- hrbrthemes          0.8.0   2020-03-06 [1] CRAN (R 4.2.3)
- htmltools           0.5.4   2022-12-07 [1] CRAN (R 4.2.2)
- htmlwidgets         1.6.2   2023-03-17 [1] CRAN (R 4.2.3)
- httpcode            0.3.0   2020-04-10 [1] CRAN (R 4.2.3)
- httpuv              1.6.8   2023-01-12 [1] CRAN (R 4.2.2)
- httr                1.4.6   2023-05-08 [1] CRAN (R 4.2.3)
- inum                1.0-5   2023-03-09 [1] CRAN (R 4.2.3)
- jsonlite            1.8.3   2022-10-21 [1] CRAN (R 4.2.2)
- kableExtra          1.3.4   2021-02-20 [1] CRAN (R 4.2.2)
- KernSmooth          2.23-20 2021-05-03 [2] CRAN (R 4.2.1)
- knitr               1.43    2023-05-25 [1] CRAN (R 4.2.3)
- labeling            0.4.2   2020-10-20 [1] CRAN (R 4.2.0)
- later               1.3.0   2021-08-18 [1] CRAN (R 4.2.2)
- lattice             0.20-45 2021-09-22 [2] CRAN (R 4.2.1)
- libcoin             1.0-10  2023-09-27 [1] CRAN (R 4.2.3)
- lifecycle           1.0.3   2022-10-07 [1] CRAN (R 4.2.2)
- magrittr          * 2.0.3   2022-03-30 [1] CRAN (R 4.2.2)
- mapdata           * 2.3.1   2022-11-01 [1] CRAN (R 4.2.3)
- maps              * 3.4.1   2022-10-30 [1] CRAN (R 4.2.3)
- MASS                7.3-60  2023-05-04 [1] CRAN (R 4.2.3)
- Matrix              1.5-4.1 2023-05-18 [1] CRAN (R 4.2.3)
- MatrixModels        0.5-1   2022-09-11 [1] CRAN (R 4.2.3)
- memoise             2.0.1   2021-11-26 [1] CRAN (R 4.2.2)
- mgcv                1.8-40  2022-03-29 [2] CRAN (R 4.2.1)
- mime                0.12    2021-09-28 [1] CRAN (R 4.2.0)
- miniUI              0.1.1.1 2018-05-18 [1] CRAN (R 4.2.2)
- munsell             0.5.0   2018-06-12 [1] CRAN (R 4.2.2)
- mvtnorm             1.2-2   2023-06-08 [1] CRAN (R 4.2.3)
- nlme                3.1-157 2022-03-25 [2] CRAN (R 4.2.1)
- pagedown            0.20    2022-12-13 [1] CRAN (R 4.2.3)
- partykit            1.2-20  2023-04-14 [1] CRAN (R 4.2.3)
- pillar              1.9.0   2023-03-22 [1] CRAN (R 4.2.3)
- pkgbuild            1.4.2   2023-06-26 [1] CRAN (R 4.2.1)
- pkgconfig           2.0.3   2019-09-22 [1] CRAN (R 4.2.2)
- pkgload             1.3.2   2022-11-16 [1] CRAN (R 4.2.2)
- polynom             1.4-1   2022-04-11 [1] CRAN (R 4.2.3)
- prettyunits         1.1.1   2020-01-24 [1] CRAN (R 4.2.2)
- processx            3.8.1   2023-04-18 [1] CRAN (R 4.2.3)
- profvis             0.3.8   2023-05-02 [1] CRAN (R 4.2.3)
- promises            1.2.0.1 2021-02-11 [1] CRAN (R 4.2.2)
- proxy               0.4-27  2022-06-09 [1] CRAN (R 4.2.3)
- ps                  1.7.5   2023-04-18 [1] CRAN (R 4.2.3)
- purrr               1.0.1   2023-01-10 [1] CRAN (R 4.2.3)
- quantreg            5.95    2023-04-08 [1] CRAN (R 4.2.3)
- R6                  2.5.1   2021-08-19 [1] CRAN (R 4.2.2)
- RColorBrewer        1.1-3   2022-04-03 [1] CRAN (R 4.2.0)
- Rcpp                1.0.9   2022-07-08 [1] CRAN (R 4.2.2)
- reactable           0.4.4   2023-03-12 [1] CRAN (R 4.2.3)
- readr             * 2.1.3   2022-10-01 [1] CRAN (R 4.2.2)
- remotes             2.4.2   2021-11-30 [1] CRAN (R 4.2.2)
- rlang               1.1.0   2023-03-14 [1] CRAN (R 4.2.3)
- rmarkdown           2.22    2023-06-01 [1] CRAN (R 4.2.3)
- rpart               4.1.16  2022-01-24 [2] CRAN (R 4.2.1)
- rstudioapi          0.14    2022-08-22 [1] CRAN (R 4.2.2)
- Rttf2pt1            1.3.12  2023-01-22 [1] CRAN (R 4.2.2)
- rvest               1.0.3   2022-08-19 [1] CRAN (R 4.2.3)
- scales              1.2.1   2022-08-20 [1] CRAN (R 4.2.2)
- sessioninfo         1.2.2   2021-12-06 [1] CRAN (R 4.2.2)
- sf                * 1.0-14  2023-07-11 [1] CRAN (R 4.2.3)
- shiny               1.7.4   2022-12-15 [1] CRAN (R 4.2.1)
- showtext            0.9-6   2023-05-03 [1] CRAN (R 4.2.3)
- showtextdb          3.0     2020-06-04 [1] CRAN (R 4.2.3)
- snakecase           0.11.0  2019-05-25 [1] CRAN (R 4.2.2)
- SparseM             1.81    2021-02-18 [1] CRAN (R 4.2.0)
- stringi             1.7.8   2022-07-11 [1] CRAN (R 4.2.1)
- stringr             1.5.0   2022-12-02 [1] CRAN (R 4.2.3)
- survival            3.3-1   2022-03-03 [2] CRAN (R 4.2.1)
- svglite             2.1.1   2023-01-10 [1] CRAN (R 4.2.2)
- sysfonts            0.8.8   2022-03-13 [1] CRAN (R 4.2.3)
- systemfonts         1.0.4   2022-02-11 [1] CRAN (R 4.2.2)
- tibble              3.2.1   2023-03-20 [1] CRAN (R 4.2.3)
- tidyr             * 1.3.0   2023-01-24 [1] CRAN (R 4.2.3)
- tidyselect          1.2.0   2022-10-10 [1] CRAN (R 4.2.2)
- tzdb                0.3.0   2022-03-28 [1] CRAN (R 4.2.2)
- units               0.8-4   2023-09-13 [1] CRAN (R 4.2.3)
- urlchecker          1.0.1   2021-11-30 [1] CRAN (R 4.2.2)
- usethis             2.2.1   2023-06-23 [1] CRAN (R 4.2.3)
- utf8                1.2.2   2021-07-24 [1] CRAN (R 4.2.2)
- vctrs               0.6.2   2023-04-19 [1] CRAN (R 4.2.3)
- viridisLite         0.4.2   2023-05-02 [1] CRAN (R 4.2.3)
- vroom               1.6.0   2022-09-30 [1] CRAN (R 4.2.2)
- webshot             0.5.4   2022-09-26 [1] CRAN (R 4.2.2)
- withr               2.5.0   2022-03-03 [1] CRAN (R 4.2.2)
- xfun                0.39    2023-04-20 [1] CRAN (R 4.2.3)
- xml2                1.3.5   2023-07-06 [1] CRAN (R 4.2.3)
- xtable              1.8-4   2019-04-21 [1] CRAN (R 4.2.2)
- yaml                2.3.6   2022-10-18 [1] CRAN (R 4.2.1)
+ package           * version    date (UTC) lib source
+ bit                 4.0.5      2022-11-15 [1] CRAN (R 4.3.3)
+ bit64               4.0.5      2020-08-30 [1] CRAN (R 4.3.3)
+ cachem              1.0.8      2023-05-01 [1] CRAN (R 4.3.3)
+ class               7.3-22     2023-05-03 [2] CRAN (R 4.3.3)
+ classInt            0.4-10     2023-09-05 [1] CRAN (R 4.3.3)
+ cli                 3.6.2      2023-12-11 [1] CRAN (R 4.3.3)
+ colorspace          2.1-0      2023-01-23 [1] CRAN (R 4.3.3)
+ confintr            1.0.2      2023-06-04 [1] CRAN (R 4.3.3)
+ crayon              1.5.2      2022-09-29 [1] CRAN (R 4.3.3)
+ crul                1.4.2      2024-04-09 [1] CRAN (R 4.3.3)
+ curl                5.2.1      2024-03-01 [1] CRAN (R 4.3.3)
+ DBI                 1.2.3      2024-06-02 [1] CRAN (R 4.3.3)
+ devtools            2.4.5      2022-10-11 [1] CRAN (R 4.3.3)
+ digest              0.6.35     2024-03-11 [1] CRAN (R 4.3.3)
+ dlookr              0.6.3      2024-02-07 [1] CRAN (R 4.3.3)
+ dplyr             * 1.1.4      2023-11-17 [1] CRAN (R 4.3.3)
+ e1071               1.7-14     2023-12-06 [1] CRAN (R 4.3.3)
+ ellipsis            0.3.2      2021-04-29 [1] CRAN (R 4.3.3)
+ evaluate            0.23       2023-11-01 [1] CRAN (R 4.3.3)
+ extrafont           0.19       2023-01-18 [1] CRAN (R 4.3.1)
+ extrafontdb         1.0        2012-06-11 [1] CRAN (R 4.3.1)
+ fansi               1.0.6      2023-12-08 [1] CRAN (R 4.3.3)
+ farver              2.1.2      2024-05-13 [1] CRAN (R 4.3.3)
+ fastmap             1.1.1      2023-02-24 [1] CRAN (R 4.3.3)
+ fontBitstreamVera   0.1.1      2017-02-01 [1] CRAN (R 4.3.1)
+ fontLiberation      0.1.0      2016-10-15 [1] CRAN (R 4.3.1)
+ fontquiver          0.2.1      2017-02-01 [1] CRAN (R 4.3.3)
+ forcats             1.0.0      2023-01-29 [1] CRAN (R 4.3.3)
+ fs                  1.6.3      2023-07-20 [1] CRAN (R 4.3.3)
+ gdtools             0.3.7      2024-03-05 [1] CRAN (R 4.3.3)
+ generics            0.1.3      2022-07-05 [1] CRAN (R 4.3.3)
+ gfonts              0.2.0      2023-01-08 [1] CRAN (R 4.3.3)
+ gghighlight         0.4.1      2023-12-16 [1] CRAN (R 4.3.3)
+ ggplot2           * 3.5.1      2024-04-23 [1] CRAN (R 4.3.3)
+ ggpmisc             0.5.6      2024-05-07 [1] CRAN (R 4.3.3)
+ ggpp                0.5.7      2024-05-06 [1] CRAN (R 4.3.3)
+ ggrepel             0.9.5      2024-01-10 [1] CRAN (R 4.3.3)
+ glue                1.7.0      2024-01-09 [1] CRAN (R 4.3.3)
+ gridExtra           2.3        2017-09-09 [1] CRAN (R 4.3.3)
+ gtable              0.3.5      2024-04-22 [1] CRAN (R 4.3.3)
+ hms                 1.1.3      2023-03-21 [1] CRAN (R 4.3.3)
+ hrbrthemes          0.8.7      2024-03-04 [1] CRAN (R 4.3.3)
+ htmltools           0.5.8.1    2024-04-04 [1] CRAN (R 4.3.3)
+ htmlwidgets         1.6.4      2023-12-06 [1] CRAN (R 4.3.3)
+ httpcode            0.3.0      2020-04-10 [1] CRAN (R 4.3.3)
+ httpuv              1.6.15     2024-03-26 [1] CRAN (R 4.3.3)
+ jsonlite            1.8.8      2023-12-04 [1] CRAN (R 4.3.3)
+ kableExtra          1.4.0      2024-01-24 [1] CRAN (R 4.3.3)
+ KernSmooth          2.23-22    2023-07-10 [2] CRAN (R 4.3.3)
+ knitr               1.46       2024-04-06 [1] CRAN (R 4.3.3)
+ labeling            0.4.3      2023-08-29 [1] CRAN (R 4.3.1)
+ later               1.3.2      2023-12-06 [1] CRAN (R 4.3.3)
+ lattice             0.22-5     2023-10-24 [2] CRAN (R 4.3.3)
+ lifecycle           1.0.4      2023-11-07 [1] CRAN (R 4.3.3)
+ magrittr          * 2.0.3      2022-03-30 [1] CRAN (R 4.3.3)
+ mapdata           * 2.3.1      2022-11-01 [1] CRAN (R 4.3.3)
+ maps              * 3.4.2      2023-12-15 [1] CRAN (R 4.3.3)
+ MASS                7.3-60.0.1 2024-01-13 [2] CRAN (R 4.3.3)
+ Matrix              1.6-5      2024-01-11 [2] CRAN (R 4.3.3)
+ MatrixModels        0.5-3      2023-11-06 [1] CRAN (R 4.3.3)
+ memoise             2.0.1      2021-11-26 [1] CRAN (R 4.3.3)
+ mgcv                1.9-1      2023-12-21 [2] CRAN (R 4.3.3)
+ mime                0.12       2021-09-28 [1] CRAN (R 4.3.1)
+ miniUI              0.1.1.1    2018-05-18 [1] CRAN (R 4.3.3)
+ munsell             0.5.1      2024-04-01 [1] CRAN (R 4.3.3)
+ nlme                3.1-164    2023-11-27 [2] CRAN (R 4.3.3)
+ pagedown            0.20       2022-12-13 [1] CRAN (R 4.3.3)
+ pillar              1.9.0      2023-03-22 [1] CRAN (R 4.3.3)
+ pkgbuild            1.4.4      2024-03-17 [1] CRAN (R 4.3.3)
+ pkgconfig           2.0.3      2019-09-22 [1] CRAN (R 4.3.3)
+ pkgload             1.3.4      2024-01-16 [1] CRAN (R 4.3.3)
+ polynom             1.4-1      2022-04-11 [1] CRAN (R 4.3.3)
+ profvis             0.3.8      2023-05-02 [1] CRAN (R 4.3.3)
+ promises            1.3.0      2024-04-05 [1] CRAN (R 4.3.3)
+ proxy               0.4-27     2022-06-09 [1] CRAN (R 4.3.3)
+ purrr               1.0.2      2023-08-10 [1] CRAN (R 4.3.3)
+ quantreg            5.97       2023-08-19 [1] CRAN (R 4.3.3)
+ R6                  2.5.1      2021-08-19 [1] CRAN (R 4.3.3)
+ RColorBrewer        1.1-3      2022-04-03 [1] CRAN (R 4.3.1)
+ Rcpp                1.0.12     2024-01-09 [1] CRAN (R 4.3.3)
+ reactable           0.4.4      2023-03-12 [1] CRAN (R 4.3.3)
+ readr             * 2.1.5      2024-01-10 [1] CRAN (R 4.3.3)
+ remotes             2.5.0      2024-03-17 [1] CRAN (R 4.3.3)
+ rlang               1.1.3      2024-01-10 [1] CRAN (R 4.3.3)
+ rmarkdown           2.26       2024-03-05 [1] CRAN (R 4.3.3)
+ rstudioapi          0.16.0     2024-03-24 [1] CRAN (R 4.3.3)
+ Rttf2pt1            1.3.12     2023-01-22 [1] CRAN (R 4.3.1)
+ scales              1.3.0      2023-11-28 [1] CRAN (R 4.3.3)
+ sessioninfo         1.2.2      2021-12-06 [1] CRAN (R 4.3.3)
+ sf                * 1.0-16     2024-03-24 [1] CRAN (R 4.3.3)
+ shiny               1.8.1.1    2024-04-02 [1] CRAN (R 4.3.3)
+ showtext            0.9-7      2024-03-02 [1] CRAN (R 4.3.3)
+ showtextdb          3.0        2020-06-04 [1] CRAN (R 4.3.3)
+ snakecase           0.11.1     2023-08-27 [1] CRAN (R 4.3.3)
+ SparseM             1.81       2021-02-18 [1] CRAN (R 4.3.1)
+ stringi             1.8.3      2023-12-11 [1] CRAN (R 4.3.2)
+ stringr             1.5.1      2023-11-14 [1] CRAN (R 4.3.3)
+ survival            3.5-8      2024-02-14 [2] CRAN (R 4.3.3)
+ svglite             2.1.3      2023-12-08 [1] CRAN (R 4.3.3)
+ sysfonts            0.8.9      2024-03-02 [1] CRAN (R 4.3.3)
+ systemfonts         1.0.6      2024-03-07 [1] CRAN (R 4.3.3)
+ tibble              3.2.1      2023-03-20 [1] CRAN (R 4.3.3)
+ tidyr             * 1.3.1      2024-01-24 [1] CRAN (R 4.3.3)
+ tidyselect          1.2.1      2024-03-11 [1] CRAN (R 4.3.3)
+ tzdb                0.4.0      2023-05-12 [1] CRAN (R 4.3.3)
+ units               0.8-5      2023-11-28 [1] CRAN (R 4.3.3)
+ urlchecker          1.0.1      2021-11-30 [1] CRAN (R 4.3.3)
+ usethis             2.2.3      2024-02-19 [1] CRAN (R 4.3.3)
+ utf8                1.2.4      2023-10-22 [1] CRAN (R 4.3.3)
+ vctrs               0.6.5      2023-12-01 [1] CRAN (R 4.3.3)
+ viridisLite         0.4.2      2023-05-02 [1] CRAN (R 4.3.3)
+ vroom               1.6.5      2023-12-05 [1] CRAN (R 4.3.3)
+ withr               3.0.0      2024-01-16 [1] CRAN (R 4.3.3)
+ xfun                0.43       2024-03-25 [1] CRAN (R 4.3.3)
+ xml2                1.3.6      2023-12-04 [1] CRAN (R 4.3.3)
+ xtable              1.8-4      2019-04-21 [1] CRAN (R 4.3.3)
+ yaml                2.3.8      2023-12-11 [1] CRAN (R 4.3.2)
 
- [1] C:/Users/belangew/AppData/Local/R/win-library/4.2
- [2] C:/Program Files/R/R-4.2.1/library
+ [1] C:/Users/belangew/AppData/Local/R/win-library/4.3
+ [2] C:/Program Files/R/R-4.3.3/library
 
 ──────────────────────────────────────────────────────────────────────────────</code></pre>
 </div>
@@ -1034,7 +1074,7 @@ Environment <span class="glyphicon glyphicon-plus-sign"></span>
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-ADA2015" class="csl-entry" role="listitem">
 American Diabetes Asssociation. (2015). <em>The burden of diabetes in north carolina</em>. <a href="http://main.diabetes.org/dorg/PDFs/Advocacy/burden-of-diabetes/north-carolina.pdf">http://main.diabetes.org/dorg/PDFs/Advocacy/burden-of-diabetes/north-carolina.pdf</a>
 </div>
@@ -1053,7 +1093,7 @@ Klein, R. J., &amp; Schoenborn, C. A. (2001). Age adjustment using the 2000 proj
 <div id="ref-Pierannunzi2012" class="csl-entry" role="listitem">
 Pierannunzi, C., Town, M., Garvin, W., Shaw, F. E., &amp; Balluz, L. (2012). Methodologic changes in the behavioral risk factor surveillance system in 2011 and potential effects on prevalence estimates. <em>Morbidity and Mortality Weekly Report</em>, <em>61</em>(22), 410–413. <a href="https://www.cdc.gov/mmwr/pdf/wk/mm6122.pdf">https://www.cdc.gov/mmwr/pdf/wk/mm6122.pdf</a>
 </div>
-</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{belanger2020,
+</div></section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{belanger2020,
   author = {Belanger, Kyle},
   title = {Diabetes in {Rural} {North} {Carolina} : {Exploring}
     {Prevalence} {Trends}},
@@ -1143,10 +1183,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1156,8 +1213,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1169,7 +1235,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1213,6 +1402,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1238,6 +1428,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1298,6 +1514,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 
