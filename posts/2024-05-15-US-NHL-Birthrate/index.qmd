@@ -45,6 +45,8 @@ The data from CDC Wonder pulls in quite nice, the only addition is adding a colu
 
 While I wish I could sit and type out how I sat and figured out the complexity of the NHL Stats API and how to bring it into R.  In reality I took a great guide, that being Jlaws post, and tweaked what I needed.  Instead of Canadian players, I pulled out just the US Born players and their birth dates. I did also pull out positions to see if that will make any sort of difference.  What pulls out of the NHL API has a ton of great details and I look forward to diving into what is available to see what kind of graphics can be built.  
 
+**08/27/2024 Update** Due to the the Coyotes moving to Utah, I had to edit the code slightly to adjust for this.  When gathering the active roster data the API was returning a blank response.  This was causing Tidyr Hoist to fail because it could not pull the columns from the nested data frame.  I added a check to see if the data frame is empty and if it is, then I return an empty data frame and skip this step.
+
 ```{r}
 #| label: Roster_Data
 

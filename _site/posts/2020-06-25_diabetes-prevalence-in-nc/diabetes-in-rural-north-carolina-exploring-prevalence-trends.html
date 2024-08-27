@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Kyle Belanger">
 <meta name="dcterms.date" content="2020-06-25">
 
-<title>Kyle Belanger - Diabetes in Rural North Carolina : Exploring Prevalence Trends</title>
+<title>Diabetes in Rural North Carolina : Exploring Prevalence Trends – Kyle Belanger</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -35,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -139,7 +139,7 @@ div.csl-indent {
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -159,7 +159,7 @@ div.csl-indent {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -223,7 +223,7 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
@@ -652,7 +652,7 @@ div.csl-indent {
 </section>
 <section id="by-county---geographical" class="level1 page-columns page-full">
 <h1>By County - Geographical</h1>
-<p>County level data first became available in 2004, three years of data is used to arrive at these estimates. For example, the 2006 estimates were computed using the data from 2005, 2006, and 2007 BRFS survey rounds. The county-level estimates were based on indirect model-dependent estimates using Bayesian multilevel modeling techniques<span class="citation" data-cites="Rao2003 Barker2013">(<a href="#ref-Rao2003" role="doc-biblioref">JNK, 2003</a> ; <a href="#ref-Barker2013" role="doc-biblioref">Barker et al., 2013</a>)</span>. This model-dependent approach employs a statistical model that “borrows strength” in making an estimate for one county from BRFSS data collected in other counties and states. Multilevel Binomial regression models with random effects of demographic variables (age 20-44, 45-64, &gt;=65; race/ethnicity; sex) at the county-level were developed. Estimates were adjusted for age to the 2000 US standard population using age groups of 20-44, 45-64, and 65 or older<span class="citation" data-cites="Klein2001">(<a href="#ref-Klein2001" role="doc-biblioref">Klein &amp; Schoenborn, 2001</a>)</span>.</p>
+<p>County level data first became available in 2004, three years of data is used to arrive at these estimates. For example, the 2006 estimates were computed using the data from 2005, 2006, and 2007 BRFS survey rounds. The county-level estimates were based on indirect model-dependent estimates using Bayesian multilevel modeling techniques<span class="citation" data-cites="Rao2003 Barker2013">(<a href="#ref-Barker2013" role="doc-biblioref">Barker et al., 2013</a>; <a href="#ref-Rao2003" role="doc-biblioref">JNK, 2003</a>)</span>. This model-dependent approach employs a statistical model that “borrows strength” in making an estimate for one county from BRFSS data collected in other counties and states. Multilevel Binomial regression models with random effects of demographic variables (age 20-44, 45-64, &gt;=65; race/ethnicity; sex) at the county-level were developed. Estimates were adjusted for age to the 2000 US standard population using age groups of 20-44, 45-64, and 65 or older<span class="citation" data-cites="Klein2001">(<a href="#ref-Klein2001" role="doc-biblioref">Klein &amp; Schoenborn, 2001</a>)</span>.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -928,7 +928,7 @@ Environment <span class="glyphicon glyphicon-plus-sign"></span>
 <div class="cell-output cell-output-stdout">
 <pre><code>─ Session info ───────────────────────────────────────────────────────────────
  setting  value
- version  R version 4.3.3 (2024-02-29 ucrt)
+ version  R version 4.4.1 (2024-06-14 ucrt)
  os       Windows 11 x64 (build 22621)
  system   x86_64, mingw32
  ui       RTerm
@@ -936,131 +936,130 @@ Environment <span class="glyphicon glyphicon-plus-sign"></span>
  collate  English_United States.utf8
  ctype    English_United States.utf8
  tz       America/New_York
- date     2024-06-08
+ date     2024-08-27
  pandoc   3.2 @ C:/Users/belangew/AppData/Local/Pandoc/ (via rmarkdown)
 
 ─ Packages ───────────────────────────────────────────────────────────────────
- package           * version    date (UTC) lib source
- bit                 4.0.5      2022-11-15 [1] CRAN (R 4.3.3)
- bit64               4.0.5      2020-08-30 [1] CRAN (R 4.3.3)
- cachem              1.0.8      2023-05-01 [1] CRAN (R 4.3.3)
- class               7.3-22     2023-05-03 [2] CRAN (R 4.3.3)
- classInt            0.4-10     2023-09-05 [1] CRAN (R 4.3.3)
- cli                 3.6.2      2023-12-11 [1] CRAN (R 4.3.3)
- colorspace          2.1-0      2023-01-23 [1] CRAN (R 4.3.3)
- confintr            1.0.2      2023-06-04 [1] CRAN (R 4.3.3)
- crayon              1.5.2      2022-09-29 [1] CRAN (R 4.3.3)
- crul                1.4.2      2024-04-09 [1] CRAN (R 4.3.3)
- curl                5.2.1      2024-03-01 [1] CRAN (R 4.3.3)
- DBI                 1.2.3      2024-06-02 [1] CRAN (R 4.3.3)
- devtools            2.4.5      2022-10-11 [1] CRAN (R 4.3.3)
- digest              0.6.35     2024-03-11 [1] CRAN (R 4.3.3)
- dlookr              0.6.3      2024-02-07 [1] CRAN (R 4.3.3)
- dplyr             * 1.1.4      2023-11-17 [1] CRAN (R 4.3.3)
- e1071               1.7-14     2023-12-06 [1] CRAN (R 4.3.3)
- ellipsis            0.3.2      2021-04-29 [1] CRAN (R 4.3.3)
- evaluate            0.23       2023-11-01 [1] CRAN (R 4.3.3)
- extrafont           0.19       2023-01-18 [1] CRAN (R 4.3.1)
- extrafontdb         1.0        2012-06-11 [1] CRAN (R 4.3.1)
- fansi               1.0.6      2023-12-08 [1] CRAN (R 4.3.3)
- farver              2.1.2      2024-05-13 [1] CRAN (R 4.3.3)
- fastmap             1.1.1      2023-02-24 [1] CRAN (R 4.3.3)
- fontBitstreamVera   0.1.1      2017-02-01 [1] CRAN (R 4.3.1)
- fontLiberation      0.1.0      2016-10-15 [1] CRAN (R 4.3.1)
- fontquiver          0.2.1      2017-02-01 [1] CRAN (R 4.3.3)
- forcats             1.0.0      2023-01-29 [1] CRAN (R 4.3.3)
- fs                  1.6.3      2023-07-20 [1] CRAN (R 4.3.3)
- gdtools             0.3.7      2024-03-05 [1] CRAN (R 4.3.3)
- generics            0.1.3      2022-07-05 [1] CRAN (R 4.3.3)
- gfonts              0.2.0      2023-01-08 [1] CRAN (R 4.3.3)
- gghighlight         0.4.1      2023-12-16 [1] CRAN (R 4.3.3)
- ggplot2           * 3.5.1      2024-04-23 [1] CRAN (R 4.3.3)
- ggpmisc             0.5.6      2024-05-07 [1] CRAN (R 4.3.3)
- ggpp                0.5.7      2024-05-06 [1] CRAN (R 4.3.3)
- ggrepel             0.9.5      2024-01-10 [1] CRAN (R 4.3.3)
- glue                1.7.0      2024-01-09 [1] CRAN (R 4.3.3)
- gridExtra           2.3        2017-09-09 [1] CRAN (R 4.3.3)
- gtable              0.3.5      2024-04-22 [1] CRAN (R 4.3.3)
- hms                 1.1.3      2023-03-21 [1] CRAN (R 4.3.3)
- hrbrthemes          0.8.7      2024-03-04 [1] CRAN (R 4.3.3)
- htmltools           0.5.8.1    2024-04-04 [1] CRAN (R 4.3.3)
- htmlwidgets         1.6.4      2023-12-06 [1] CRAN (R 4.3.3)
- httpcode            0.3.0      2020-04-10 [1] CRAN (R 4.3.3)
- httpuv              1.6.15     2024-03-26 [1] CRAN (R 4.3.3)
- jsonlite            1.8.8      2023-12-04 [1] CRAN (R 4.3.3)
- kableExtra          1.4.0      2024-01-24 [1] CRAN (R 4.3.3)
- KernSmooth          2.23-22    2023-07-10 [2] CRAN (R 4.3.3)
- knitr               1.46       2024-04-06 [1] CRAN (R 4.3.3)
- labeling            0.4.3      2023-08-29 [1] CRAN (R 4.3.1)
- later               1.3.2      2023-12-06 [1] CRAN (R 4.3.3)
- lattice             0.22-5     2023-10-24 [2] CRAN (R 4.3.3)
- lifecycle           1.0.4      2023-11-07 [1] CRAN (R 4.3.3)
- magrittr          * 2.0.3      2022-03-30 [1] CRAN (R 4.3.3)
- mapdata           * 2.3.1      2022-11-01 [1] CRAN (R 4.3.3)
- maps              * 3.4.2      2023-12-15 [1] CRAN (R 4.3.3)
- MASS                7.3-60.0.1 2024-01-13 [2] CRAN (R 4.3.3)
- Matrix              1.6-5      2024-01-11 [2] CRAN (R 4.3.3)
- MatrixModels        0.5-3      2023-11-06 [1] CRAN (R 4.3.3)
- memoise             2.0.1      2021-11-26 [1] CRAN (R 4.3.3)
- mgcv                1.9-1      2023-12-21 [2] CRAN (R 4.3.3)
- mime                0.12       2021-09-28 [1] CRAN (R 4.3.1)
- miniUI              0.1.1.1    2018-05-18 [1] CRAN (R 4.3.3)
- munsell             0.5.1      2024-04-01 [1] CRAN (R 4.3.3)
- nlme                3.1-164    2023-11-27 [2] CRAN (R 4.3.3)
- pagedown            0.20       2022-12-13 [1] CRAN (R 4.3.3)
- pillar              1.9.0      2023-03-22 [1] CRAN (R 4.3.3)
- pkgbuild            1.4.4      2024-03-17 [1] CRAN (R 4.3.3)
- pkgconfig           2.0.3      2019-09-22 [1] CRAN (R 4.3.3)
- pkgload             1.3.4      2024-01-16 [1] CRAN (R 4.3.3)
- polynom             1.4-1      2022-04-11 [1] CRAN (R 4.3.3)
- profvis             0.3.8      2023-05-02 [1] CRAN (R 4.3.3)
- promises            1.3.0      2024-04-05 [1] CRAN (R 4.3.3)
- proxy               0.4-27     2022-06-09 [1] CRAN (R 4.3.3)
- purrr               1.0.2      2023-08-10 [1] CRAN (R 4.3.3)
- quantreg            5.97       2023-08-19 [1] CRAN (R 4.3.3)
- R6                  2.5.1      2021-08-19 [1] CRAN (R 4.3.3)
- RColorBrewer        1.1-3      2022-04-03 [1] CRAN (R 4.3.1)
- Rcpp                1.0.12     2024-01-09 [1] CRAN (R 4.3.3)
- reactable           0.4.4      2023-03-12 [1] CRAN (R 4.3.3)
- readr             * 2.1.5      2024-01-10 [1] CRAN (R 4.3.3)
- remotes             2.5.0      2024-03-17 [1] CRAN (R 4.3.3)
- rlang               1.1.3      2024-01-10 [1] CRAN (R 4.3.3)
- rmarkdown           2.26       2024-03-05 [1] CRAN (R 4.3.3)
- rstudioapi          0.16.0     2024-03-24 [1] CRAN (R 4.3.3)
- Rttf2pt1            1.3.12     2023-01-22 [1] CRAN (R 4.3.1)
- scales              1.3.0      2023-11-28 [1] CRAN (R 4.3.3)
- sessioninfo         1.2.2      2021-12-06 [1] CRAN (R 4.3.3)
- sf                * 1.0-16     2024-03-24 [1] CRAN (R 4.3.3)
- shiny               1.8.1.1    2024-04-02 [1] CRAN (R 4.3.3)
- showtext            0.9-7      2024-03-02 [1] CRAN (R 4.3.3)
- showtextdb          3.0        2020-06-04 [1] CRAN (R 4.3.3)
- snakecase           0.11.1     2023-08-27 [1] CRAN (R 4.3.3)
- SparseM             1.81       2021-02-18 [1] CRAN (R 4.3.1)
- stringi             1.8.3      2023-12-11 [1] CRAN (R 4.3.2)
- stringr             1.5.1      2023-11-14 [1] CRAN (R 4.3.3)
- survival            3.5-8      2024-02-14 [2] CRAN (R 4.3.3)
- svglite             2.1.3      2023-12-08 [1] CRAN (R 4.3.3)
- sysfonts            0.8.9      2024-03-02 [1] CRAN (R 4.3.3)
- systemfonts         1.0.6      2024-03-07 [1] CRAN (R 4.3.3)
- tibble              3.2.1      2023-03-20 [1] CRAN (R 4.3.3)
- tidyr             * 1.3.1      2024-01-24 [1] CRAN (R 4.3.3)
- tidyselect          1.2.1      2024-03-11 [1] CRAN (R 4.3.3)
- tzdb                0.4.0      2023-05-12 [1] CRAN (R 4.3.3)
- units               0.8-5      2023-11-28 [1] CRAN (R 4.3.3)
- urlchecker          1.0.1      2021-11-30 [1] CRAN (R 4.3.3)
- usethis             2.2.3      2024-02-19 [1] CRAN (R 4.3.3)
- utf8                1.2.4      2023-10-22 [1] CRAN (R 4.3.3)
- vctrs               0.6.5      2023-12-01 [1] CRAN (R 4.3.3)
- viridisLite         0.4.2      2023-05-02 [1] CRAN (R 4.3.3)
- vroom               1.6.5      2023-12-05 [1] CRAN (R 4.3.3)
- withr               3.0.0      2024-01-16 [1] CRAN (R 4.3.3)
- xfun                0.43       2024-03-25 [1] CRAN (R 4.3.3)
- xml2                1.3.6      2023-12-04 [1] CRAN (R 4.3.3)
- xtable              1.8-4      2019-04-21 [1] CRAN (R 4.3.3)
- yaml                2.3.8      2023-12-11 [1] CRAN (R 4.3.2)
+ package           * version  date (UTC) lib source
+ bit                 4.0.5    2022-11-15 [1] CRAN (R 4.4.1)
+ bit64               4.0.5    2020-08-30 [1] CRAN (R 4.4.1)
+ cachem              1.1.0    2024-05-16 [1] CRAN (R 4.4.1)
+ class               7.3-22   2023-05-03 [1] CRAN (R 4.4.1)
+ classInt            0.4-10   2023-09-05 [1] CRAN (R 4.4.1)
+ cli                 3.6.3    2024-06-21 [1] CRAN (R 4.4.1)
+ colorspace          2.1-1    2024-07-26 [1] CRAN (R 4.4.1)
+ confintr            1.0.2    2023-06-04 [1] CRAN (R 4.4.1)
+ crayon              1.5.3    2024-06-20 [1] CRAN (R 4.4.1)
+ crul                1.5.0    2024-07-19 [1] CRAN (R 4.4.1)
+ curl                5.2.1    2024-03-01 [1] CRAN (R 4.4.1)
+ DBI                 1.2.3    2024-06-02 [1] CRAN (R 4.4.1)
+ devtools            2.4.5    2022-10-11 [1] CRAN (R 4.4.1)
+ digest              0.6.36   2024-06-23 [1] CRAN (R 4.4.1)
+ dlookr              0.6.3    2024-02-07 [1] CRAN (R 4.4.1)
+ dplyr             * 1.1.4    2023-11-17 [1] CRAN (R 4.4.1)
+ e1071               1.7-14   2023-12-06 [1] CRAN (R 4.4.1)
+ ellipsis            0.3.2    2021-04-29 [1] CRAN (R 4.4.1)
+ evaluate            0.24.0   2024-06-10 [1] CRAN (R 4.4.1)
+ extrafont           0.19     2023-01-18 [1] CRAN (R 4.4.0)
+ extrafontdb         1.0      2012-06-11 [1] CRAN (R 4.4.0)
+ fansi               1.0.6    2023-12-08 [1] CRAN (R 4.4.1)
+ farver              2.1.2    2024-05-13 [1] CRAN (R 4.4.1)
+ fastmap             1.2.0    2024-05-15 [1] CRAN (R 4.4.1)
+ fontBitstreamVera   0.1.1    2017-02-01 [1] CRAN (R 4.4.0)
+ fontLiberation      0.1.0    2016-10-15 [1] CRAN (R 4.4.0)
+ fontquiver          0.2.1    2017-02-01 [1] CRAN (R 4.4.1)
+ forcats             1.0.0    2023-01-29 [1] CRAN (R 4.4.1)
+ fs                  1.6.4    2024-04-25 [1] CRAN (R 4.4.1)
+ gdtools             0.3.7    2024-03-05 [1] CRAN (R 4.4.1)
+ generics            0.1.3    2022-07-05 [1] CRAN (R 4.4.1)
+ gfonts              0.2.0    2023-01-08 [1] CRAN (R 4.4.1)
+ gghighlight         0.4.1    2023-12-16 [1] CRAN (R 4.4.1)
+ ggplot2           * 3.5.1    2024-04-23 [1] CRAN (R 4.4.1)
+ ggpmisc             0.6.0    2024-06-28 [1] CRAN (R 4.4.1)
+ ggpp                0.5.8-1  2024-07-01 [1] CRAN (R 4.4.1)
+ ggrepel             0.9.5    2024-01-10 [1] CRAN (R 4.4.1)
+ glue                1.7.0    2024-01-09 [1] CRAN (R 4.4.1)
+ gridExtra           2.3      2017-09-09 [1] CRAN (R 4.4.1)
+ gtable              0.3.5    2024-04-22 [1] CRAN (R 4.4.1)
+ hms                 1.1.3    2023-03-21 [1] CRAN (R 4.4.1)
+ hrbrthemes          0.8.7    2024-03-04 [1] CRAN (R 4.4.1)
+ htmltools           0.5.8.1  2024-04-04 [1] CRAN (R 4.4.1)
+ htmlwidgets         1.6.4    2023-12-06 [1] CRAN (R 4.4.1)
+ httpcode            0.3.0    2020-04-10 [1] CRAN (R 4.4.1)
+ httpuv              1.6.15   2024-03-26 [1] CRAN (R 4.4.1)
+ jsonlite            1.8.8    2023-12-04 [1] CRAN (R 4.4.1)
+ kableExtra          1.4.0    2024-01-24 [1] CRAN (R 4.4.1)
+ KernSmooth          2.23-24  2024-05-17 [1] CRAN (R 4.4.1)
+ knitr               1.48     2024-07-07 [1] CRAN (R 4.4.1)
+ labeling            0.4.3    2023-08-29 [1] CRAN (R 4.4.0)
+ later               1.3.2    2023-12-06 [1] CRAN (R 4.4.1)
+ lattice             0.22-6   2024-03-20 [1] CRAN (R 4.4.1)
+ lifecycle           1.0.4    2023-11-07 [1] CRAN (R 4.4.1)
+ magrittr          * 2.0.3    2022-03-30 [1] CRAN (R 4.4.1)
+ mapdata           * 2.3.1    2022-11-01 [1] CRAN (R 4.4.1)
+ maps              * 3.4.2    2023-12-15 [1] CRAN (R 4.4.1)
+ MASS                7.3-60.2 2024-04-26 [1] CRAN (R 4.4.1)
+ Matrix              1.7-0    2024-04-26 [1] CRAN (R 4.4.1)
+ MatrixModels        0.5-3    2023-11-06 [1] CRAN (R 4.4.1)
+ memoise             2.0.1    2021-11-26 [1] CRAN (R 4.4.1)
+ mgcv                1.9-1    2023-12-21 [1] CRAN (R 4.4.1)
+ mime                0.12     2021-09-28 [1] CRAN (R 4.4.0)
+ miniUI              0.1.1.1  2018-05-18 [1] CRAN (R 4.4.1)
+ munsell             0.5.1    2024-04-01 [1] CRAN (R 4.4.1)
+ nlme                3.1-164  2023-11-27 [1] CRAN (R 4.4.1)
+ pagedown            0.20     2022-12-13 [1] CRAN (R 4.4.1)
+ pillar              1.9.0    2023-03-22 [1] CRAN (R 4.4.1)
+ pkgbuild            1.4.4    2024-03-17 [1] CRAN (R 4.4.1)
+ pkgconfig           2.0.3    2019-09-22 [1] CRAN (R 4.4.1)
+ pkgload             1.4.0    2024-06-28 [1] CRAN (R 4.4.1)
+ polynom             1.4-1    2022-04-11 [1] CRAN (R 4.4.1)
+ profvis             0.3.8    2023-05-02 [1] CRAN (R 4.4.1)
+ promises            1.3.0    2024-04-05 [1] CRAN (R 4.4.1)
+ proxy               0.4-27   2022-06-09 [1] CRAN (R 4.4.1)
+ purrr               1.0.2    2023-08-10 [1] CRAN (R 4.4.1)
+ quantreg            5.98     2024-05-26 [1] CRAN (R 4.4.1)
+ R6                  2.5.1    2021-08-19 [1] CRAN (R 4.4.1)
+ RColorBrewer        1.1-3    2022-04-03 [1] CRAN (R 4.4.0)
+ Rcpp                1.0.13   2024-07-17 [1] CRAN (R 4.4.1)
+ reactable           0.4.4    2023-03-12 [1] CRAN (R 4.4.1)
+ readr             * 2.1.5    2024-01-10 [1] CRAN (R 4.4.1)
+ remotes             2.5.0    2024-03-17 [1] CRAN (R 4.4.1)
+ rlang               1.1.4    2024-06-04 [1] CRAN (R 4.4.1)
+ rmarkdown           2.28     2024-08-17 [1] CRAN (R 4.4.1)
+ rstudioapi          0.16.0   2024-03-24 [1] CRAN (R 4.4.1)
+ Rttf2pt1            1.3.12   2023-01-22 [1] CRAN (R 4.4.0)
+ scales              1.3.0    2023-11-28 [1] CRAN (R 4.4.1)
+ sessioninfo         1.2.2    2021-12-06 [1] CRAN (R 4.4.1)
+ sf                * 1.0-16   2024-03-24 [1] CRAN (R 4.4.1)
+ shiny               1.9.1    2024-08-01 [1] CRAN (R 4.4.1)
+ showtext            0.9-7    2024-03-02 [1] CRAN (R 4.4.1)
+ showtextdb          3.0      2020-06-04 [1] CRAN (R 4.4.1)
+ snakecase           0.11.1   2023-08-27 [1] CRAN (R 4.4.1)
+ SparseM             1.84-2   2024-07-17 [1] CRAN (R 4.4.1)
+ stringi             1.8.4    2024-05-06 [1] CRAN (R 4.4.0)
+ stringr             1.5.1    2023-11-14 [1] CRAN (R 4.4.1)
+ survival            3.6-4    2024-04-24 [1] CRAN (R 4.4.1)
+ svglite             2.1.3    2023-12-08 [1] CRAN (R 4.4.1)
+ sysfonts            0.8.9    2024-03-02 [1] CRAN (R 4.4.1)
+ systemfonts         1.1.0    2024-05-15 [1] CRAN (R 4.4.1)
+ tibble              3.2.1    2023-03-20 [1] CRAN (R 4.4.1)
+ tidyr             * 1.3.1    2024-01-24 [1] CRAN (R 4.4.1)
+ tidyselect          1.2.1    2024-03-11 [1] CRAN (R 4.4.1)
+ tzdb                0.4.0    2023-05-12 [1] CRAN (R 4.4.1)
+ units               0.8-5    2023-11-28 [1] CRAN (R 4.4.1)
+ urlchecker          1.0.1    2021-11-30 [1] CRAN (R 4.4.1)
+ usethis             3.0.0    2024-07-29 [1] CRAN (R 4.4.1)
+ utf8                1.2.4    2023-10-22 [1] CRAN (R 4.4.1)
+ vctrs               0.6.5    2023-12-01 [1] CRAN (R 4.4.1)
+ viridisLite         0.4.2    2023-05-02 [1] CRAN (R 4.4.1)
+ vroom               1.6.5    2023-12-05 [1] CRAN (R 4.4.1)
+ withr               3.0.0    2024-01-16 [1] CRAN (R 4.4.1)
+ xfun                0.46     2024-07-18 [1] CRAN (R 4.4.1)
+ xml2                1.3.6    2023-12-04 [1] CRAN (R 4.4.1)
+ xtable              1.8-4    2019-04-21 [1] CRAN (R 4.4.1)
+ yaml                2.3.10   2024-07-26 [1] CRAN (R 4.4.1)
 
- [1] C:/Users/belangew/AppData/Local/R/win-library/4.3
- [2] C:/Program Files/R/R-4.3.3/library
+ [1] C:/Program Files/R/R-4.4.1/library
 
 ──────────────────────────────────────────────────────────────────────────────</code></pre>
 </div>
@@ -1139,18 +1138,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1182,7 +1170,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1190,7 +1200,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

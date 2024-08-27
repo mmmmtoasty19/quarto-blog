@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Kyle Belanger">
 <meta name="dcterms.date" content="2020-02-10">
 
-<title>Kyle Belanger - Line Graphs and Interactivity</title>
+<title>Line Graphs and Interactivity – Kyle Belanger</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -35,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -137,7 +137,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -157,7 +157,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -209,7 +209,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -354,8 +354,8 @@ $ fiscal_year                              &lt;fct&gt; 2013, 2013, 2013, 2013, 2
 <span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>g2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="plotly html-widget html-fill-item" id="htmlwidget-b1e3ee4d5879640cfdb4" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-b1e3ee4d5879640cfdb4">{"x":{"visdat":{"53146fe27765":["function () ","plotlyVisDat"]},"cur_data":"53146fe27765","attrs":{"53146fe27765":{"x":{},"y":{},"mode":"lines","hoverinfo":"y","color":{},"colors":["#a6611a","#dfc27d","#80cdc1","#018571"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"","type":"category","categoryorder":"array","categoryarray":["Oct","Nov","Dec","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"% Tests (+) for Influenza"},"title":"Flu Viral Surveillance: % Respiratory Specimens Positive for Influenza","legend":{"x":100,"y":0.5},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":["Oct","Nov","Dec","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep"],"y":[5,13,34,33,23,17,11,6,4,3,3,3],"mode":"lines","hoverinfo":["y","y","y","y","y","y","y","y","y","y","y","y"],"type":"scatter","name":"2013","marker":{"color":"rgba(166,97,26,1)","line":{"color":"rgba(166,97,26,1)"}},"textfont":{"color":"rgba(166,97,26,1)"},"error_y":{"color":"rgba(166,97,26,1)"},"error_x":{"color":"rgba(166,97,26,1)"},"line":{"color":"rgba(166,97,26,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Oct","Nov","Dec","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep"],"y":[4,8,26,27,18,12,14,10,6,4,3,2],"mode":"lines","hoverinfo":["y","y","y","y","y","y","y","y","y","y","y","y"],"type":"scatter","name":"2014","marker":{"color":"rgba(223,194,125,1)","line":{"color":"rgba(223,194,125,1)"}},"textfont":{"color":"rgba(223,194,125,1)"},"error_y":{"color":"rgba(223,194,125,1)"},"error_x":{"color":"rgba(223,194,125,1)"},"line":{"color":"rgba(223,194,125,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Oct","Nov","Dec","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep"],"y":[4,13,29,23,14,12,8,4,2,2,2,2],"mode":"lines","hoverinfo":["y","y","y","y","y","y","y","y","y","y","y","y"],"type":"scatter","name":"2015","marker":{"color":"rgba(128,205,193,1)","line":{"color":"rgba(128,205,193,1)"}},"textfont":{"color":"rgba(128,205,193,1)"},"error_y":{"color":"rgba(128,205,193,1)"},"error_x":{"color":"rgba(128,205,193,1)"},"line":{"color":"rgba(128,205,193,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Oct","Nov","Dec","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep"],"y":[1,1,2,6,17,20,12,5,2,1,1,2],"mode":"lines","hoverinfo":["y","y","y","y","y","y","y","y","y","y","y","y"],"type":"scatter","name":"2016","marker":{"color":"rgba(1,133,113,1)","line":{"color":"rgba(1,133,113,1)"}},"textfont":{"color":"rgba(1,133,113,1)"},"error_y":{"color":"rgba(1,133,113,1)"},"error_x":{"color":"rgba(1,133,113,1)"},"line":{"color":"rgba(1,133,113,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item" id="htmlwidget-f68a794f84f8fe260a7a" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-f68a794f84f8fe260a7a">{"x":{"visdat":{"2d846dba4b06":["function () ","plotlyVisDat"]},"cur_data":"2d846dba4b06","attrs":{"2d846dba4b06":{"x":{},"y":{},"mode":"lines","hoverinfo":"y","color":{},"colors":["#a6611a","#dfc27d","#80cdc1","#018571"],"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"","type":"category","categoryorder":"array","categoryarray":["Oct","Nov","Dec","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"% Tests (+) for Influenza"},"title":"Flu Viral Surveillance: % Respiratory Specimens Positive for Influenza","legend":{"x":100,"y":0.5},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":["Oct","Nov","Dec","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep"],"y":[5,13,34,33,23,17,11,6,4,3,3,3],"mode":"lines","hoverinfo":["y","y","y","y","y","y","y","y","y","y","y","y"],"type":"scatter","name":"2013","marker":{"color":"rgba(166,97,26,1)","line":{"color":"rgba(166,97,26,1)"}},"textfont":{"color":"rgba(166,97,26,1)"},"error_y":{"color":"rgba(166,97,26,1)"},"error_x":{"color":"rgba(166,97,26,1)"},"line":{"color":"rgba(166,97,26,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Oct","Nov","Dec","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep"],"y":[4,8,26,27,18,12,14,10,6,4,3,2],"mode":"lines","hoverinfo":["y","y","y","y","y","y","y","y","y","y","y","y"],"type":"scatter","name":"2014","marker":{"color":"rgba(223,194,125,1)","line":{"color":"rgba(223,194,125,1)"}},"textfont":{"color":"rgba(223,194,125,1)"},"error_y":{"color":"rgba(223,194,125,1)"},"error_x":{"color":"rgba(223,194,125,1)"},"line":{"color":"rgba(223,194,125,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Oct","Nov","Dec","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep"],"y":[4,13,29,23,14,12,8,4,2,2,2,2],"mode":"lines","hoverinfo":["y","y","y","y","y","y","y","y","y","y","y","y"],"type":"scatter","name":"2015","marker":{"color":"rgba(128,205,193,1)","line":{"color":"rgba(128,205,193,1)"}},"textfont":{"color":"rgba(128,205,193,1)"},"error_y":{"color":"rgba(128,205,193,1)"},"error_x":{"color":"rgba(128,205,193,1)"},"line":{"color":"rgba(128,205,193,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["Oct","Nov","Dec","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep"],"y":[1,1,2,6,17,20,12,5,2,1,1,2],"mode":"lines","hoverinfo":["y","y","y","y","y","y","y","y","y","y","y","y"],"type":"scatter","name":"2016","marker":{"color":"rgba(1,133,113,1)","line":{"color":"rgba(1,133,113,1)"}},"textfont":{"color":"rgba(1,133,113,1)"},"error_y":{"color":"rgba(1,133,113,1)"},"error_x":{"color":"rgba(1,133,113,1)"},"line":{"color":"rgba(1,133,113,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 
@@ -407,18 +407,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -450,7 +439,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -458,7 +469,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

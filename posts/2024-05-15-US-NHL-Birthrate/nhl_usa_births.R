@@ -45,18 +45,23 @@ teams <- httr::GET("https://api.nhle.com/stats/rest/en/team") %>%
   tidyr::unnest_wider(data)
 
 get_roster  <- function(team){
-  httr::GET(glue::glue("https://api-web.nhle.com/v1/roster/{team}/20232024")) %>%
+  df  <- httr::GET(glue::glue("https://api-web.nhle.com/v1/roster/{team}/20232024")) %>%
     httr::content() %>%
     purrr::flatten() %>%
-    tibble::tibble(data = .) %>%
-    tidyr::hoist(
-      .col = "data"
-      , "firstName" = list("firstName", 1L)
-      , "lastName" = list("lastName", 1L)
-      , "positionCode"
-      , "birthDate"
-      , "birthCountry"
-    )
+    tibble::tibble(data = .)
+
+  if (!nrow(df) == 0) {
+    df  <- df |>
+      tidyr::hoist(
+        .col = "data"
+        , "firstName" = list("firstName", 1L)
+        , "lastName" = list("lastName", 1L)
+        , "positionCode"
+        , "birthDate"
+        , "birthCountry"
+      )
+  }
+  return(df)
 }
 
 usa_roster  <- purrr::map(teams$triCode, get_roster) %>%
