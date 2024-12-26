@@ -80,3 +80,8 @@ Manifest.toml
 
 
 /_*.local
+
+
+# VScode files
+
+.vscode/*
