@@ -8,6 +8,10 @@ categories:
 engine: julia
 ---
 
+<!-- TODO this post is no longer working due to a change in the API from this site
+It will need to be fixed at a later date  -->
+
+
 Recently two things happened quite close together that started me on the journey to this post.
 
 1.  First I have been planning on fiddling around and learning Julia for a while. I love R and that love will not change but I thought it was good to try something different.

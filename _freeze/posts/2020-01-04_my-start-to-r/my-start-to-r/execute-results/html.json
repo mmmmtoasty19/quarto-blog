@@ -1,0 +1,17 @@
+{
+  "hash": "c3009a177f55e692f2e3a75aad6585bf",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"My Start to R\"\nsubtitle: |\n  A short introduction to my blog, and R journey. \ndate: 01-24-2020\n\n---\n\nToday starts my attempt at sharing my R journey with the world! I have been learning R off and on now since late 2019,  I have begun to take it much more serious as I work through my Data Analytics class at UCF.  My love for all things numbers and graphs has really blossomed, and I am choosing to share that love with anyone who cares to read.  I will not claim to be the best at R, or any programming for that matter, but these are my attempts.  Each post in this serious will be replicated a graph created in Tableau from the book Tableau for Healthcare.  Todays graph is a simple horizontal bar chart, in transferring to both a new blog site and computer I have unfortunately lost the original bar graph, but trust me the one I created looks just like it. \n\n# Load Libraries\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyr)\nlibrary(magrittr)\nlibrary(ggplot2)\nlibrary(stringr)\nlibrary(dplyr)\n```\n:::\n\n\n# Import Data\n\n\n::: {.cell}\n\n```{.r .cell-code}\nds <- readxl::read_excel(\n    path   = \"Tableau 10 Training Practice Data.xlsx\" \n    ,sheet = \"02 - Patient Falls-Single Hosp\"\n    )\n```\n:::\n\n\n# Clean Data Names\n\n\n::: {.cell}\n\n```{.r .cell-code}\n#should make reusable forumla at later time\nnames(ds) <- tolower(names(ds))\nnames(ds) <- str_replace_all(names(ds),\" \", \"_\")\n```\n:::\n\n\n# Convert Data to 'Long Form' \n\n\n::: {.cell}\n\n```{.r .cell-code}\nds1 <- ds %>% \n  gather(\"patient_falls_no_injury_rate\" , \"patient_falls_with_injury_rate\"\n         ,key   = \"injury\" \n         ,value = \"rate\" ) %>% \n  mutate(injury = (injury == \"patient_falls_with_injury_rate\"))\n```\n:::\n\n\n# Graph 5.1\n\n\n::: {.cell}\n\n```{.r .cell-code}\nb1 <- ds %>% \n  ggplot(mapping = aes(x = reorder(type_of_care,total_patient_falls_rate ) , y = total_patient_falls_rate)) +\n  geom_col(fill = \"#2b83ba\") + \n  coord_flip() +\n  scale_y_continuous(breaks = NULL) +\n  theme(axis.ticks = element_blank()) +\n  labs(title = \"Rate of Patient Falls (per 1,000 Pateint Days)\\nby Type of Care for FY2017\"\n      ,x     = NULL\n      ,y     = NULL\n      ) +\n  theme_classic() +\n  geom_text(aes(label = format(total_patient_falls_rate, digits = 2)), nudge_y = -.25, color = \"white\")\n  \nb1\n```\n\n::: {.cell-output-display}\n![](my-start-to-r_files/figure-html/unnamed-chunk-5-1.png){width=672}\n:::\n:::\n\n",
+    "supporting": [
+      "my-start-to-r_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -2038,13 +2038,8 @@
     },
     "matrixStats": {
       "Package": "matrixStats",
-      "Version": "1.4.1",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R"
-      ],
-      "Hash": "8885ffb1f46e820dede6b2ca9442abca"
+      "Version": "1.5.0",
+      "Source": "Repository"
     },
     "memoise": {
       "Package": "memoise",

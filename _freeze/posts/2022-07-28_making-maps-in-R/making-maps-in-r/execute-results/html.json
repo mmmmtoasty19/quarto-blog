@@ -1,0 +1,15 @@
+{
+  "hash": "af4ffb88a27752c2ca73df9e21c17c02",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Making Maps in R\"\nsubtitle: |\n  A short description of the post.\ndate: 2022-07-28\ndraft: true\n---\n\n\n\n\nDistill is a publication format for scientific and technical writing, native to the web.\n\nLearn more about using Distill at <https://rstudio.github.io/distill>.\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
