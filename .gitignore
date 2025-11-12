@@ -84,7 +84,7 @@ Manifest.toml
 
 # VScode files
 
-.vscode/*
+.vscode/
 
 # Do not commit _site folder
-_site/*
+_site/
