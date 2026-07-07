@@ -1,12 +1,14 @@
-
-
 source("renv/activate.R")
 
-# Use ubuntu package manager to speed up renv set up
+# Cross-platform binary repo: RSPM auto-detects platform when you drop
+# the __linux__/<distro> segment. Falls back to CRAN's own binaries
+# on Windows since RSPM's generic endpoint doesn't always cover Windows well.
 options(repos = c(
-  CRAN = "https://packagemanager.posit.co/cran/__linux__/noble/latest"
+  CRAN = if (Sys.info()[["sysname"]] == "Windows") {
+    "https://cloud.r-project.org"
+  } else {
+    "https://packagemanager.posit.co/cran/__linux__/noble/latest"
+  }
 ))
 
-# Force binary package installation
 options(pkgType = "binary")
-Sys.setenv(R_COMPILE_AND_INSTALL_PACKAGES = "never")
