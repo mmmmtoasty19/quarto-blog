@@ -2,7 +2,7 @@
 title: "About"
 image: kyle.jpg
 about:
-  template: broadside
+  template: solana
   links:
     - icon: linkedin
       text: LinkedIn
@@ -15,7 +15,11 @@ about:
 
 ## Bio
 
-I am a highly accomplished Medical Technologist with an extensive 14-year track record in the medical industry, consistently demonstrating the ability to effectively bridge the divide between medical professionals and information technologists. Proficient in the application of machine learning techniques to enhance medical data analysis and adept at developing innovative R Shiny apps to streamline healthcare processes and improve patient outcomes.
+Laboratory informatics consultant with 17 years of clinical lab experience, specializing in workflow optimization and middleware solutions. I understand how labs actually run and how staff use their systems day to day, and I use that to improve processes and uncover the value in lab data. I apply R, Shiny and machine learning to that data, including a deployed prioritization app that replaced a manual process.
+
+::: {.edu-exp}
+
+::: {.edu-exp-col}
 
 ## Education
 
@@ -31,9 +35,13 @@ M.S. in Healthcare Informatics | August 2018 - May 2020
 
 B.S. in Clinical Laboratory Science | August 2005 - May 2009
 
+:::
+
+::: {.edu-exp-col}
+
 ## Experience
 
-**Siemens Healthineers** | Laboratory Infromatics Consultant | March 2026 - Present
+**Siemens Healthineers** | Laboratory Informatics Consultant | March 2026 - Present
 
 **Roche Diagnositcs** | IT Workflow Consultant | Oct 2021 - Jan 2026
 
@@ -42,4 +50,8 @@ B.S. in Clinical Laboratory Science | August 2005 - May 2009
 **Cape Fear Valley Hospital** | Lead Medical Laboratory Scientist | June 2011 - July 2012
 
 **Cape Fear Valley Hospital** | Medical Laboratory Scientist | June 2009 - June 2011
+
+:::
+
+:::
 

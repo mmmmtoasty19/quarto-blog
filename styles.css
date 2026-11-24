@@ -1,1 +1,34 @@
-/* css styles */
+/* About page: Education and Experience side by side on wide screens */
+.edu-exp {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 992px) {
+  .edu-exp {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* The solana template nests everything beside the photo. Flatten the
+     wrappers so .edu-exp can span the full width below photo and bio.
+     Selectors match the template's specificity so these rules win. */
+  div.quarto-about-solana .about-entity {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 2rem;
+    align-items: start;
+  }
+  div.quarto-about-solana .about-entity .entity-contents,
+  div.quarto-about-solana .about-entity .about-contents,
+  div.quarto-about-solana .about-entity main.content {
+    display: contents;
+  }
+  div.quarto-about-solana .about-entity > .about-image {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+  }
+  div.quarto-about-solana .about-entity .edu-exp {
+    grid-column: 1 / -1;
+    grid-row: 4;
+  }
+}

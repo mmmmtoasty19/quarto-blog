@@ -1,9 +1,11 @@
 {
-  "hash": "f7119df889dc4d8b272d7cfe0e8e9b8f",
+  "hash": "bee8c186496f5bee2c70cb56832a39c6",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Exploring Parental Leave policies in the United States\"\ndescription: \"Inspired by TidyTuesday Week 22 - 2026 dataset about European Parenting Leave Policies\"\ndate: \"07/23/2026\"  \ncategories:\n  - tidytuesday\n  - R\n  - dataViz\ncode-fold: true\n---\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nds_US_names <- readxl::read_excel('us_policies.xlsx', n_max = 2, col_names = FALSE) |> \n  t() |> \n  tibble::as_tibble(.name_repair = \"unique_quiet\") |> \n  tidyr::fill(\"...1\") |> \n  tidyr::unite(col = \"new_names\", \"...1\", \"...2\", sep = \"_\") |> \n  dplyr::pull() |> \n  stringr::str_remove_all(\"_NA\") |>\n  janitor::make_clean_names()\n  \nds_US_raw <- readxl::read_excel('us_policies.xlsx', col_names = ds_US_names, skip = 2)\n```\n:::\n",
-    "supporting": [],
+    "markdown": "---\ntitle: \"Exploring Parental Leave policies in the United States\"\ndescription: \"Inspired by TidyTuesday Week 22 - 2026 dataset about European Parenting Leave Policies\"\ndate: \"07/23/2026\"  \ncategories:\n  - tidytuesday\n  - R\n  - dataViz\ncode-fold: true\ndraft: true\n---\nI recently returned to work following the birth of my second child.  I just so happen to work for a company that provides 12 weeks of paid leave for either parent (both if they both work for the company).  This is way outside the norm for the United States, and in fact many people have zero access to paid leave outside of using personal PTO or sick days if those are available to them. Federally the only requirement for parental leave is unpaid FMLA for up to 12 weeks of job protected leave. However with FMLA there are requirements including being at the company for 12 month, the employer must have at least 50 employees, and have work 1,250 hour over the 12 months before leave.  It just so happened that right as I came back the data set for the TidyTuesday was about Leave Policies in the EU.  The EU is night and day ahead of the United States, but the data set inspired me to look into US policies and see what does exist on a state level.     \n\n\n::: {.cell}\n\n```{.r .cell-code}\nds_US_names <- readxl::read_excel('us_policies.xlsx', n_max = 2, col_names = FALSE) |> \n  t() |> \n  tibble::as_tibble(.name_repair = \"unique_quiet\") |> \n  tidyr::fill(\"...1\") |> \n  tidyr::unite(col = \"new_names\", \"...1\", \"...2\", sep = \"_\") |> \n  dplyr::pull() |> \n  stringr::str_remove_all(\"_NA\") |>\n  janitor::make_clean_names()\n  \nds_US_raw <- readxl::read_excel('us_policies.xlsx', col_names = ds_US_names, skip = 2)\n```\n:::\n",
+    "supporting": [
+      "index_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
