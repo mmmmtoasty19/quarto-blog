@@ -1,0 +1,28 @@
+---
+title: "Exploring Parental Leave policies in the United States"
+description: "Inspired by TidyTuesday Week 22 - 2026 dataset about European Parenting Leave Policies"
+date: "07/23/2026"  
+categories:
+  - tidytuesday
+  - R
+  - dataViz
+code-fold: true
+draft: true
+---
+I recently returned to work following the birth of my second child.  I just so happen to work for a company that provides 12 weeks of paid leave for either parent (both if they both work for the company).  This is way outside the norm for the United States, and in fact many people have zero access to paid leave outside of using personal PTO or sick days if those are available to them. Federally the only requirement for parental leave is unpaid FMLA for up to 12 weeks of job protected leave. However with FMLA there are requirements including being at the company for 12 month, the employer must have at least 50 employees, and have work 1,250 hour over the 12 months before leave.  It just so happened that right as I came back the data set for the TidyTuesday was about Leave Policies in the EU.  The EU is night and day ahead of the United States, but the data set inspired me to look into US policies and see what does exist on a state level.     
+
+```{r}
+
+ds_US_names <- readxl::read_excel('us_policies.xlsx', n_max = 2, col_names = FALSE) |> 
+  t() |> 
+  tibble::as_tibble(.name_repair = "unique_quiet") |> 
+  tidyr::fill("...1") |> 
+  tidyr::unite(col = "new_names", "...1", "...2", sep = "_") |> 
+  dplyr::pull() |> 
+  stringr::str_remove_all("_NA") |>
+  janitor::make_clean_names()
+  
+ds_US_raw <- readxl::read_excel('us_policies.xlsx', col_names = ds_US_names, skip = 2)
+
+
+```

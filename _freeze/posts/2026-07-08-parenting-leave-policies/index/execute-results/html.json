@@ -1,0 +1,15 @@
+{
+  "hash": "f7119df889dc4d8b272d7cfe0e8e9b8f",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Exploring Parental Leave policies in the United States\"\ndescription: \"Inspired by TidyTuesday Week 22 - 2026 dataset about European Parenting Leave Policies\"\ndate: \"07/23/2026\"  \ncategories:\n  - tidytuesday\n  - R\n  - dataViz\ncode-fold: true\n---\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nds_US_names <- readxl::read_excel('us_policies.xlsx', n_max = 2, col_names = FALSE) |> \n  t() |> \n  tibble::as_tibble(.name_repair = \"unique_quiet\") |> \n  tidyr::fill(\"...1\") |> \n  tidyr::unite(col = \"new_names\", \"...1\", \"...2\", sep = \"_\") |> \n  dplyr::pull() |> \n  stringr::str_remove_all(\"_NA\") |>\n  janitor::make_clean_names()\n  \nds_US_raw <- readxl::read_excel('us_policies.xlsx', col_names = ds_US_names, skip = 2)\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
