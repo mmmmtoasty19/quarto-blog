@@ -18,7 +18,7 @@ website:
         href: https://github.com/mmmmtoasty19
 format:
   html:
-    theme: flatly
+    theme: minty
     css: styles.css
 
 
